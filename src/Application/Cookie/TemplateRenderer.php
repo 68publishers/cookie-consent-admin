@@ -11,10 +11,10 @@ use Nette\Bridges\ApplicationLatte\LatteFactory;
 use stdClass;
 use Throwable;
 
-final class TemplateRenderer implements TemplateRendererInterface
+final readonly class TemplateRenderer implements TemplateRendererInterface
 {
     public function __construct(
-        private readonly LatteFactory $latteFactory,
+        private LatteFactory $latteFactory,
     ) {}
 
     public function render(Template $template): string

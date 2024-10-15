@@ -14,11 +14,11 @@ use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 use SixtyEightPublishers\ArchitectureBundle\Domain\Event\AggregateDeleted;
 use SixtyEightPublishers\ArchitectureBundle\Event\EventHandlerInterface;
 
-final class DeleteCookiesWhenCookieProviderDeleted implements EventHandlerInterface
+final readonly class DeleteCookiesWhenCookieProviderDeleted implements EventHandlerInterface
 {
     public function __construct(
-        private readonly CommandBusInterface $commandBus,
-        private readonly QueryBusInterface $queryBus,
+        private CommandBusInterface $commandBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(AggregateDeleted $event): void

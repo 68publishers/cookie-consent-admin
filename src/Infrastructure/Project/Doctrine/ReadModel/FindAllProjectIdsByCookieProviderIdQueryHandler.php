@@ -10,10 +10,10 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 
-final class FindAllProjectIdsByCookieProviderIdQueryHandler implements QueryHandlerInterface
+final readonly class FindAllProjectIdsByCookieProviderIdQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
+        private EntityManagerInterface $em,
     ) {}
 
     /**

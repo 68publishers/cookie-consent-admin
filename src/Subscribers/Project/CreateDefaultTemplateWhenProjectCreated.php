@@ -10,11 +10,11 @@ use Psr\Log\LoggerInterface;
 use SixtyEightPublishers\ArchitectureBundle\Bus\CommandBusInterface;
 use SixtyEightPublishers\ArchitectureBundle\Event\EventHandlerInterface;
 
-final class CreateDefaultTemplateWhenProjectCreated implements EventHandlerInterface
+final readonly class CreateDefaultTemplateWhenProjectCreated implements EventHandlerInterface
 {
     public function __construct(
-        private readonly CommandBusInterface $commandBus,
-        private readonly LoggerInterface $logger,
+        private CommandBusInterface $commandBus,
+        private LoggerInterface $logger,
     ) {}
 
     public function __invoke(ProjectCreated $event): void

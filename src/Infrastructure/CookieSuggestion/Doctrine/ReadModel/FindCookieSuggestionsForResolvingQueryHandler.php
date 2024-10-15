@@ -12,10 +12,10 @@ use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 
-final class FindCookieSuggestionsForResolvingQueryHandler implements QueryHandlerInterface
+final readonly class FindCookieSuggestionsForResolvingQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
+        private EntityManagerInterface $em,
     ) {}
 
     /**

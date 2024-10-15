@@ -15,7 +15,7 @@ use Throwable;
 
 final class CachedGlobalSettings implements GlobalSettingsInterface
 {
-    private const CACHE_KEY = 'global_settings';
+    private const string CACHE_KEY = 'global_settings';
 
     private Cache $cache;
 

@@ -8,10 +8,10 @@ use Nepada\FormRenderer\TemplateRendererFactory;
 use Nette\Application\UI\Control;
 use Nette\Application\UI\Form;
 
-final class FormFactory implements FormFactoryInterface
+final readonly class FormFactory implements FormFactoryInterface
 {
     public function __construct(
-        private readonly TemplateRendererFactory $templateRendererFactory,
+        private TemplateRendererFactory $templateRendererFactory,
     ) {}
 
     public function create(array $options = []): Form

@@ -15,11 +15,11 @@ use App\ReadModel\Project\ProjectCookieTotalsView;
 use DateTimeImmutable;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class ProjectStatisticsCalculator implements ProjectStatisticsCalculatorInterface
+final readonly class ProjectStatisticsCalculator implements ProjectStatisticsCalculatorInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
-        private readonly GlobalSettingsInterface $globalSettings,
+        private QueryBusInterface $queryBus,
+        private GlobalSettingsInterface $globalSettings,
     ) {}
 
     public function calculateConsentStatistics(string $projectId, Period $currentPeriod, ?Period $previousPeriod = null, ?string $environment = null): ConsentStatistics

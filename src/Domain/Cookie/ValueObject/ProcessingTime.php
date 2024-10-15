@@ -10,8 +10,8 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AbstractStringVal
 
 final class ProcessingTime extends AbstractStringValueObject
 {
-    public const PERSISTENT = 'persistent';
-    public const SESSION = 'session';
+    public const string PERSISTENT = 'persistent';
+    public const string SESSION = 'session';
 
     /**
      * @throws InvalidProcessingTimeException

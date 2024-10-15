@@ -8,7 +8,7 @@ use App\ReadModel\AbstractDataGridQuery;
 
 final class ConsentsDataGridQuery extends AbstractDataGridQuery
 {
-    private const DEFAULT_COUNT_LIMIT = 100_000;
+    private const int DEFAULT_COUNT_LIMIT = 100_000;
 
     public static function create(
         string $projectId,

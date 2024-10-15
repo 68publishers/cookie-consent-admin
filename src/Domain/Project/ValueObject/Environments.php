@@ -8,7 +8,7 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AbstractValueObje
 
 final class Environments extends AbstractValueObjectSet
 {
-    public const ITEM_CLASSNAME = Environment::class;
+    public const string ITEM_CLASSNAME = Environment::class;
 
     /**
      * @param string $value

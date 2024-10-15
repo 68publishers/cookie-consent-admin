@@ -10,11 +10,11 @@ use App\Domain\Category\Command\UpdateCategoryCommand;
 use App\Domain\Category\ValueObject\CategoryId;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class UpdateCategoryCommandHandler implements CommandHandlerInterface
+final readonly class UpdateCategoryCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly CategoryRepositoryInterface $categoryRepository,
-        private readonly CheckCodeUniquenessInterface $checkCodeUniqueness,
+        private CategoryRepositoryInterface $categoryRepository,
+        private CheckCodeUniquenessInterface $checkCodeUniqueness,
     ) {}
 
     public function __invoke(UpdateCategoryCommand $command): void

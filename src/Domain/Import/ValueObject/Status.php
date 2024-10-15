@@ -8,9 +8,9 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AbstractEnumValue
 
 final class Status extends AbstractEnumValueObject
 {
-    public const RUNNING = 'running';
-    public const FAILED = 'failed';
-    public const COMPLETED = 'completed';
+    public const string RUNNING = 'running';
+    public const string FAILED = 'failed';
+    public const string COMPLETED = 'completed';
 
     public static function values(): array
     {

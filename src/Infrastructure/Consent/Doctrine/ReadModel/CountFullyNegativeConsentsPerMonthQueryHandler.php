@@ -11,10 +11,10 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 
-final class CountFullyNegativeConsentsPerMonthQueryHandler implements QueryHandlerInterface
+final readonly class CountFullyNegativeConsentsPerMonthQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
+        private EntityManagerInterface $em,
     ) {}
 
     public function __invoke(CountFullyNegativeConsentsPerMonthQuery $query): MonthlyStatistics

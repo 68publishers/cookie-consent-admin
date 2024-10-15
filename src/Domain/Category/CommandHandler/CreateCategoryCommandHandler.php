@@ -10,11 +10,11 @@ use App\Domain\Category\CheckCodeUniquenessInterface;
 use App\Domain\Category\Command\CreateCategoryCommand;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class CreateCategoryCommandHandler implements CommandHandlerInterface
+final readonly class CreateCategoryCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly CategoryRepositoryInterface $categoryRepository,
-        private readonly CheckCodeUniquenessInterface $checkCodeUniqueness,
+        private CategoryRepositoryInterface $categoryRepository,
+        private CheckCodeUniquenessInterface $checkCodeUniqueness,
     ) {}
 
     public function __invoke(CreateCategoryCommand $command): void

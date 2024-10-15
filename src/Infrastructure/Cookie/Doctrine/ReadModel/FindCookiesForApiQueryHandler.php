@@ -18,11 +18,11 @@ use Generator;
 use SixtyEightPublishers\ArchitectureBundle\Infrastructure\Doctrine\ReadModel\BatchGeneratorFactory;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 
-final class FindCookiesForApiQueryHandler implements QueryHandlerInterface
+final readonly class FindCookiesForApiQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
-        private readonly BatchGeneratorFactory $batchGeneratorFactory,
+        private EntityManagerInterface $em,
+        private BatchGeneratorFactory $batchGeneratorFactory,
     ) {}
 
     public function __invoke(FindCookiesForApiQuery $query): Generator

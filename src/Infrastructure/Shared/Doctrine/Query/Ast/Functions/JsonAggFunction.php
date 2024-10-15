@@ -7,10 +7,10 @@ namespace App\Infrastructure\Shared\Doctrine\Query\Ast\Functions;
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\AST\Node;
 use Doctrine\ORM\Query\AST\OrderByClause;
-use Doctrine\ORM\Query\Lexer;
 use Doctrine\ORM\Query\Parser;
 use Doctrine\ORM\Query\QueryException;
 use Doctrine\ORM\Query\SqlWalker;
+use Doctrine\ORM\Query\TokenType;
 
 final class JsonAggFunction extends FunctionNode
 {
@@ -26,26 +26,26 @@ final class JsonAggFunction extends FunctionNode
      */
     public function parse(Parser $parser): void
     {
-        $parser->match(Lexer::T_IDENTIFIER);
-        $parser->match(Lexer::T_OPEN_PARENTHESIS);
+        $parser->match(TokenType::T_IDENTIFIER);
+        $parser->match(TokenType::T_OPEN_PARENTHESIS);
 
         $lexer = $parser->getLexer();
 
-        if ($lexer->isNextToken(Lexer::T_DISTINCT)) {
-            $parser->match(Lexer::T_DISTINCT);
+        if ($lexer->isNextToken(TokenType::T_DISTINCT)) {
+            $parser->match(TokenType::T_DISTINCT);
 
             $this->isDistinct = true;
         }
 
         do {
             $this->fields[] = $parser->StringPrimary();
-        } while ($lexer->isNextToken(Lexer::T_COMMA) && null === $parser->match(Lexer::T_COMMA));
+        } while ($lexer->isNextToken(TokenType::T_COMMA) && null === $parser->match(TokenType::T_COMMA));
 
-        if ($lexer->isNextToken(Lexer::T_ORDER)) {
+        if ($lexer->isNextToken(TokenType::T_ORDER)) {
             $this->orderBy = $parser->OrderByClause();
         }
 
-        $parser->match(Lexer::T_CLOSE_PARENTHESIS);
+        $parser->match(TokenType::T_CLOSE_PARENTHESIS);
     }
 
     public function getSql(SqlWalker $sqlWalker): string

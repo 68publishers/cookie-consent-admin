@@ -11,10 +11,10 @@ use App\Domain\Import\ValueObject\ImportId;
 use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AggregateId;
 use SixtyEightPublishers\ArchitectureBundle\Infrastructure\Common\Repository\AggregateRootRepositoryInterface;
 
-final class ImportRepository implements ImportRepositoryInterface
+final readonly class ImportRepository implements ImportRepositoryInterface
 {
     public function __construct(
-        private readonly AggregateRootRepositoryInterface $aggregateRootRepository,
+        private AggregateRootRepositoryInterface $aggregateRootRepository,
     ) {}
 
     public function save(Import $import): void

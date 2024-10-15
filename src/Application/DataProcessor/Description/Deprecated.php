@@ -7,10 +7,10 @@ namespace App\Application\DataProcessor\Description;
 use App\Application\DataProcessor\Context\ContextInterface;
 use Nette\Schema\Elements\Type;
 
-final class Deprecated implements TypeDescriptorPropertyInterface
+final readonly class Deprecated implements TypeDescriptorPropertyInterface
 {
     public function __construct(
-        private readonly string $message,
+        private string $message,
     ) {}
 
     public function applyToType(Type $type, ContextInterface $context): Type

@@ -8,7 +8,7 @@ use App\ReadModel\DataGridQueryInterface;
 use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
-use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Query\QueryBuilder as DbalQueryBuilder;
 use Doctrine\DBAL\Types\Types;
@@ -182,7 +182,7 @@ trait DataGridQueryHandlerTrait
 
         if ($qb instanceof DbalQueryBuilder) {
             $firstValue = reset($value);
-            $type = is_numeric($firstValue) ? Connection::PARAM_INT_ARRAY : Connection::PARAM_STR_ARRAY;
+            $type = is_numeric($firstValue) ? ArrayParameterType::INTEGER : ArrayParameterType::STRING;
         }
 
         $qb->andWhere(sprintf('%s IN (:%s)', $column, $p))

@@ -22,8 +22,8 @@
 
 The application runs in Docker and consists of the following [services](../docker-compose.yml):
 
-- App (`cmp-app`) - Nginx webserver with PHP `8.1`, composer and yarn
-- Worker (`cmp-worker`) - PHP `8.1` cli with supervisor
+- App (`cmp-app`) - Nginx webserver with PHP `8.3`, composer and yarn
+- Worker (`cmp-worker`) - PHP `8.3` cli with supervisor
 - Db (`cmp-db`) - PostgreSQL in the version `13.6`
 - Redis (`cmp-redis`) - Redis in the version `7.0.10`
 

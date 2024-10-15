@@ -55,7 +55,7 @@ final class UserFormControl extends Control
         $emailAddressField = $form->addText('email_address', 'email_address.field')
             ->setHtmlType('email')
             ->setRequired('email_address.required')
-            ->addRule($form::EMAIL, 'email_address.rule');
+            ->addRule($form::Email, 'email_address.rule');
 
         $form->addText('firstname', 'firstname.field')
             ->setRequired('firstname.required');

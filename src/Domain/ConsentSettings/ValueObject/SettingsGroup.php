@@ -8,7 +8,7 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AbstractValueObje
 
 final class SettingsGroup extends AbstractValueObjectSet
 {
-    public const ITEM_CLASSNAME = Settings::class;
+    public const string ITEM_CLASSNAME = Settings::class;
 
     protected static function reconstituteItem($value): Settings
     {

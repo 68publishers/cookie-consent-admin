@@ -16,12 +16,12 @@ use App\Domain\Shared\ValueObject\Checksum;
 use Exception;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class StoreConsentSettingsCommandHandler implements CommandHandlerInterface
+final readonly class StoreConsentSettingsCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly ConsentSettingsRepositoryInterface $consentSettingsRepository,
-        private readonly CheckChecksumNotExistsInterface $checkChecksumNotExists,
-        private readonly ShortIdentifierGeneratorInterface $shortIdentifierGenerator,
+        private ConsentSettingsRepositoryInterface $consentSettingsRepository,
+        private CheckChecksumNotExistsInterface $checkChecksumNotExists,
+        private ShortIdentifierGeneratorInterface $shortIdentifierGenerator,
     ) {}
 
     /**

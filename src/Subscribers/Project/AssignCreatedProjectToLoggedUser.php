@@ -11,11 +11,11 @@ use SixtyEightPublishers\ArchitectureBundle\Bus\CommandBusInterface;
 use SixtyEightPublishers\ArchitectureBundle\Event\EventHandlerInterface;
 use SixtyEightPublishers\UserBundle\Application\Authentication\Identity;
 
-final class AssignCreatedProjectToLoggedUser implements EventHandlerInterface
+final readonly class AssignCreatedProjectToLoggedUser implements EventHandlerInterface
 {
     public function __construct(
-        private readonly CommandBusInterface $commandBus,
-        private readonly NetteUser $user,
+        private CommandBusInterface $commandBus,
+        private NetteUser $user,
     ) {}
 
     public function __invoke(ProjectCreated $event): void

@@ -10,10 +10,10 @@ use Doctrine\DBAL\Exception;
 use Doctrine\ORM\EntityManagerInterface;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 
-final class FindCookieDataForSuggestionQueryHandler implements QueryHandlerInterface
+final readonly class FindCookieDataForSuggestionQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
+        private EntityManagerInterface $em,
     ) {}
 
     /**

@@ -34,7 +34,7 @@ final class CrawlerSettingsFormControl extends Control
 
         $enabledField = $form->addCheckbox('enabled', 'enabled.field');
 
-        $enabledField->addCondition($form::EQUAL, true)
+        $enabledField->addCondition($form::Equal, true)
             ->toggle('#' . $this->getUniqueId() . '-host_url-container')
             ->toggle('#' . $this->getUniqueId() . '-username-container')
             ->toggle('#' . $this->getUniqueId() . '-password-container')
@@ -42,13 +42,13 @@ final class CrawlerSettingsFormControl extends Control
 
         $form->addText('host_url', 'host_url.field')
             ->setOption('id', $this->getUniqueId() . '-host_url-container')
-            ->addConditionOn($enabledField, $form::EQUAL, true)
+            ->addConditionOn($enabledField, $form::Equal, true)
                 ->setRequired('host_url.required')
                 ->addRule($form::URL, 'host_url.rule.url');
 
         $form->addText('username', 'username.field')
             ->setOption('id', $this->getUniqueId() . '-username-container')
-            ->addConditionOn($enabledField, $form::EQUAL, true)
+            ->addConditionOn($enabledField, $form::Equal, true)
                 ->setRequired('username.required');
 
         $form->addText('password', 'password.field')
@@ -56,7 +56,7 @@ final class CrawlerSettingsFormControl extends Control
 
         $form->addText('callback_uri_token', 'callback_uri_token.field')
             ->setOption('id', $this->getUniqueId() . '-callback_uri_token-container')
-            ->addConditionOn($enabledField, $form::EQUAL, true)
+            ->addConditionOn($enabledField, $form::Equal, true)
                 ->setRequired('callback_uri_token.required');
 
         $form->addProtection('//layout.form_protection');

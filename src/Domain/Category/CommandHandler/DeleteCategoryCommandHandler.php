@@ -9,10 +9,10 @@ use App\Domain\Category\Command\DeleteCategoryCommand;
 use App\Domain\Category\ValueObject\CategoryId;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class DeleteCategoryCommandHandler implements CommandHandlerInterface
+final readonly class DeleteCategoryCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly CategoryRepositoryInterface $categoryRepository,
+        private CategoryRepositoryInterface $categoryRepository,
     ) {}
 
     public function __invoke(DeleteCategoryCommand $command): void

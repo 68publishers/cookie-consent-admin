@@ -10,11 +10,11 @@ use App\ReadModel\GlobalSettings\GetGlobalSettingsQuery;
 use App\ReadModel\GlobalSettings\GlobalSettingsView;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class GlobalSettingsFactory implements GlobalSettingsFactoryInterface
+final readonly class GlobalSettingsFactory implements GlobalSettingsFactoryInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
-        private readonly Locales $locales,
+        private QueryBusInterface $queryBus,
+        private Locales $locales,
     ) {}
 
     public function create(): GlobalSettingsInterface

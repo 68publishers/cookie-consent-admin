@@ -8,7 +8,7 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AbstractValueObje
 
 final class AcceptedCategories extends AbstractValueObjectSet
 {
-    public const ITEM_CLASSNAME = CategoryCode::class;
+    public const string ITEM_CLASSNAME = CategoryCode::class;
 
     protected static function reconstituteItem($value): CategoryCode
     {

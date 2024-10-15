@@ -8,7 +8,7 @@ use App\Application\CookieSuggestion\Solution\Solutions;
 
 final class CookieLongTimeNotFound implements ProblemInterface
 {
-    public const TYPE = 'cookie_long_time_not_found';
+    public const string TYPE = 'cookie_long_time_not_found';
 
     public function __construct(
         private readonly int $notFoundForDays,

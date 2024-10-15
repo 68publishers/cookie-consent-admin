@@ -6,10 +6,10 @@ namespace App\Application\Acl;
 
 final class ProjectResource extends AbstractResource
 {
-    public const READ = 'read';
-    public const READ_ALL = 'read_all';
-    public const CREATE = 'create';
-    public const UPDATE = 'update';
-    public const DELETE = 'delete';
-    public const EXPORT = 'export';
+    public const string READ = 'read';
+    public const string READ_ALL = 'read_all';
+    public const string CREATE = 'create';
+    public const string UPDATE = 'update';
+    public const string DELETE = 'delete';
+    public const string EXPORT = 'export';
 }

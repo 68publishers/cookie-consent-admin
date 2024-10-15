@@ -6,12 +6,12 @@ namespace App\Application\CookieSuggestion\Suggestion;
 
 use App\Application\CookieSuggestion\Solution\Solutions;
 
-final class IgnoredCookieSuggestion implements SuggestionInterface
+final readonly class IgnoredCookieSuggestion implements SuggestionInterface
 {
     public function __construct(
-        private readonly SuggestionInterface $originalSuggestion,
-        private readonly bool $permanentlyIgnored,
-        private readonly Solutions $solutions,
+        private SuggestionInterface $originalSuggestion,
+        private bool $permanentlyIgnored,
+        private Solutions $solutions,
     ) {}
 
     public function getSuggestionId(): string

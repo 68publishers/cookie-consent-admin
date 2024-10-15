@@ -7,12 +7,12 @@ namespace App\Domain\GlobalSettings\ValueObject;
 use App\Domain\GlobalSettings\Exception\UnableToCreateEnvironmentException;
 use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\ComparableValueObjectInterface;
 
-final class Environment implements ComparableValueObjectInterface
+final readonly class Environment implements ComparableValueObjectInterface
 {
     public function __construct(
-        public readonly EnvironmentCode $code,
-        public readonly EnvironmentName $name,
-        public readonly Color $color,
+        public EnvironmentCode $code,
+        public EnvironmentName $name,
+        public Color $color,
     ) {}
 
     public static function fromSafeNative(mixed $native): self

@@ -10,10 +10,10 @@ use App\Domain\Project\ValueObject\ProjectId;
 use App\ReadModel\ConsentSettings\GetLatestShortIdentifierQuery;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class ShortIdentifierGenerator implements ShortIdentifierGeneratorInterface
+final readonly class ShortIdentifierGenerator implements ShortIdentifierGeneratorInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function generate(ProjectId $projectId): ShortIdentifier

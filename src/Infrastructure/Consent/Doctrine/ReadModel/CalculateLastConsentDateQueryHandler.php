@@ -12,10 +12,10 @@ use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 
-final class CalculateLastConsentDateQueryHandler implements QueryHandlerInterface
+final readonly class CalculateLastConsentDateQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
+        private EntityManagerInterface $em,
     ) {}
 
     /**

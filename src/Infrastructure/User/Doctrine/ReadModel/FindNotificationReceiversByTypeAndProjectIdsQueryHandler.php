@@ -15,11 +15,11 @@ use SixtyEightPublishers\ArchitectureBundle\Infrastructure\Doctrine\ReadModel\Ba
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\Batch;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 
-final class FindNotificationReceiversByTypeAndProjectIdsQueryHandler implements QueryHandlerInterface
+final readonly class FindNotificationReceiversByTypeAndProjectIdsQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
-        private readonly BatchGeneratorFactory $batchGeneratorFactory,
+        private EntityManagerInterface $em,
+        private BatchGeneratorFactory $batchGeneratorFactory,
     ) {}
 
     /**

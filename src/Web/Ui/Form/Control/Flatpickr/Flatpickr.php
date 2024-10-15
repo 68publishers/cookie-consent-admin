@@ -16,19 +16,19 @@ use Throwable;
 
 final class Flatpickr extends TextInput
 {
-    public const ATTRIBUTE_MODE = 'data-mode';
-    public const ATTRIBUTE_NO_CALENDAR = 'data-no-calendar';
-    public const ATTRIBUTE_ENABLE_TIME = 'data-enable-time';
-    public const ATTRIBUTE_DATE_FORMAT = 'data-date-format';
-    public const ATTRIBUTE_TIME_24_HR = 'data-time_24hr';
-    public const ATTRIBUTE_ALLOW_INPUT = 'data-allow-input';
-    public const ATTRIBUTE_DEFAULT_HOUR = 'data-default-hour';
-    public const ATTRIBUTE_DEFAULT_MINUTE = 'data-default-minute';
+    public const string ATTRIBUTE_MODE = 'data-mode';
+    public const string ATTRIBUTE_NO_CALENDAR = 'data-no-calendar';
+    public const string ATTRIBUTE_ENABLE_TIME = 'data-enable-time';
+    public const string ATTRIBUTE_DATE_FORMAT = 'data-date-format';
+    public const string ATTRIBUTE_TIME_24_HR = 'data-time_24hr';
+    public const string ATTRIBUTE_ALLOW_INPUT = 'data-allow-input';
+    public const string ATTRIBUTE_DEFAULT_HOUR = 'data-default-hour';
+    public const string ATTRIBUTE_DEFAULT_MINUTE = 'data-default-minute';
 
-    public const MODE_SINGLE = 'single';
-    public const MODE_MULTIPLE = 'multiple';
-    public const MODE_RANGE = 'range';
-    public const MODE_DEFAULT = self::MODE_SINGLE;
+    public const string MODE_SINGLE = 'single';
+    public const string MODE_MULTIPLE = 'multiple';
+    public const string MODE_RANGE = 'range';
+    public const string MODE_DEFAULT = self::MODE_SINGLE;
 
     private array $attributes = [
         'x-data' => '',

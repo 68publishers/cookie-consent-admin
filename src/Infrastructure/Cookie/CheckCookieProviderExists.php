@@ -11,10 +11,10 @@ use App\ReadModel\CookieProvider\CookieProviderView;
 use App\ReadModel\CookieProvider\GetCookieProviderByIdQuery;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class CheckCookieProviderExists implements CheckCookieProviderExistsInterface
+final readonly class CheckCookieProviderExists implements CheckCookieProviderExistsInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(CookieProviderId $cookieProviderId): void

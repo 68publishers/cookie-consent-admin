@@ -9,7 +9,7 @@ use Nette\Forms\Controls\BaseControl;
 
 final class UniqueMultiplierValuesValidator
 {
-    public const Validator = self::class . '::validate';
+    public const string Validator = self::class . '::validate';
 
     private function __construct() {}
 

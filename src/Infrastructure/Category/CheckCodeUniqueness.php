@@ -12,10 +12,10 @@ use App\ReadModel\Category\CategoryView;
 use App\ReadModel\Category\GetCategoryByCodeQuery;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class CheckCodeUniqueness implements CheckCodeUniquenessInterface
+final readonly class CheckCodeUniqueness implements CheckCodeUniquenessInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(CategoryId $categoryId, Code $code): void

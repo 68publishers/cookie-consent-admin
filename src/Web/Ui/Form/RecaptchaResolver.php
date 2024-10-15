@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Web\Ui\Form;
 
-final class RecaptchaResolver
+final readonly class RecaptchaResolver
 {
     public function __construct(
-        private readonly bool $isEnabled,
+        private bool $isEnabled,
     ) {}
 
     public function isEnabled(): bool

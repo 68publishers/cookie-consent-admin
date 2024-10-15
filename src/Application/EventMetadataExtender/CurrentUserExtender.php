@@ -10,7 +10,7 @@ use SixtyEightPublishers\ArchitectureBundle\EventStore\EventMetadataExtenderInte
 
 final class CurrentUserExtender implements EventMetadataExtenderInterface
 {
-    public const KEY_USER_ID = 'user_id';
+    public const string KEY_USER_ID = 'user_id';
 
     public function __construct(
         private readonly NetteUser $user,

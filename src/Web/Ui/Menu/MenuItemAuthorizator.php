@@ -18,7 +18,7 @@ use SixtyEightPublishers\SmartNetteComponent\Exception\ForbiddenRequestException
 
 final class MenuItemAuthorizator implements IAuthorizator
 {
-    private const CRAWLER_BASED_PRESENTERS = [
+    private const array CRAWLER_BASED_PRESENTERS = [
         ScenariosPresenter::class,
         ScenarioSchedulersPresenter::class,
         FoundCookiesPresenter::class,

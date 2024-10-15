@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Application\CookieSuggestion\Solution;
 
-final class IgnoreUntilNexOccurrence implements SolutionInterface
+final readonly class IgnoreUntilNexOccurrence implements SolutionInterface
 {
     public function __construct(
-        private readonly bool $virtualSuggestion = false,
+        private bool $virtualSuggestion = false,
     ) {}
 
     public function getType(): string

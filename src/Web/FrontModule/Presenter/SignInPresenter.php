@@ -36,7 +36,7 @@ final class SignInPresenter extends FrontPresenter
             static fn (OAuthFlowInterface $flow): string => $flow->getName(),
             array_filter(
                 $this->oauthFlowProvider->all(),
-                static fn (OauthFlowInterface $flow): bool => $flow->isEnabled(),
+                static fn (OAuthFlowInterface $flow): bool => $flow->isEnabled(),
             ),
         );
     }

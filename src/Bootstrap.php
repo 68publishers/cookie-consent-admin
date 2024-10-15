@@ -6,7 +6,7 @@ namespace App;
 
 use ArrayIterator;
 use IteratorAggregate;
-use Nette\Configurator;
+use Nette\Bootstrap\Configurator;
 use SixtyEightPublishers\Environment\Bootstrap\EnvBootstrap;
 use SixtyEightPublishers\Environment\Debug\EnvDetector;
 use SixtyEightPublishers\Environment\Debug\SimpleCookieDetector;
@@ -28,7 +28,7 @@ final class Bootstrap
         }
 
         if ('cli' === PHP_SAPI) {
-            $configurator->addParameters([
+            $configurator->addStaticParameters([
                 'wwwDir' => dirname(__DIR__ . '/../public/index.php'),
             ]);
         }

@@ -7,10 +7,10 @@ namespace App\Application\DataProcessor\Description;
 use App\Application\DataProcessor\Context\ContextInterface;
 use Nette\Schema\Elements\Type;
 
-final class DefaultValue implements TypeDescriptorPropertyInterface
+final readonly class DefaultValue implements TypeDescriptorPropertyInterface
 {
     public function __construct(
-        private readonly mixed $value,
+        private mixed $value,
     ) {}
 
     public function applyToType(Type $type, ContextInterface $context): Type

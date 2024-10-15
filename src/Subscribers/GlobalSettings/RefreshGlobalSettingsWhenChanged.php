@@ -14,10 +14,10 @@ use App\Domain\GlobalSettings\Event\LocalizationSettingsChanged;
 use SixtyEightPublishers\ArchitectureBundle\Event\EventHandlerInterface;
 use Symfony\Component\Messenger\Handler\MessageSubscriberInterface;
 
-final class RefreshGlobalSettingsWhenChanged implements EventHandlerInterface, MessageSubscriberInterface
+final readonly class RefreshGlobalSettingsWhenChanged implements EventHandlerInterface, MessageSubscriberInterface
 {
     public function __construct(
-        private readonly GlobalSettingsInterface $globalSettings,
+        private GlobalSettingsInterface $globalSettings,
     ) {}
 
     public static function getHandledMessages(): iterable

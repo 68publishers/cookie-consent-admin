@@ -22,12 +22,12 @@ use SixtyEightPublishers\ArchitectureBundle\Bus\CommandBusInterface;
 use Spatie\Async\Pool;
 use Throwable;
 
-final class Runner implements RunnerInterface
+final readonly class Runner implements RunnerInterface
 {
     public function __construct(
-        private readonly CommandBusInterface $commandBus,
-        private readonly ImporterInterface $importer,
-        private readonly LoggerInterface $logger,
+        private CommandBusInterface $commandBus,
+        private ImporterInterface $importer,
+        private LoggerInterface $logger,
     ) {}
 
     public function run(ReaderInterface $reader, ImportOptions $options): ImportState

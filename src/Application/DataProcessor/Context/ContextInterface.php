@@ -8,7 +8,7 @@ use ArrayAccess;
 
 interface ContextInterface extends ArrayAccess
 {
-    public const WEAK_TYPES = 'weak_types';
+    public const string WEAK_TYPES = 'weak_types';
 
     public static function default(array $array): self;
 

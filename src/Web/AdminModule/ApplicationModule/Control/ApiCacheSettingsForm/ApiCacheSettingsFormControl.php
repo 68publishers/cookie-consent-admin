@@ -37,19 +37,19 @@ final class ApiCacheSettingsFormControl extends Control
             ->setOption('description', Html::fromHtml($translator->translate('use_entity_tag.description')));
 
         $form->addCheckbox('cache_control_enabled', 'cache_control_enabled.field')
-            ->addCondition($form::EQUAL, true)
+            ->addCondition($form::Equal, true)
                 ->toggle('#' . $this->getUniqueId() . '-max-age-container')
                 ->endCondition()
-            ->addConditionOn($form['use_entity_tag'], $form::EQUAL, true)
+            ->addConditionOn($form['use_entity_tag'], $form::Equal, true)
                 ->setRequired('cache_control_enabled.required');
 
         $form->addText('max_age', 'max_age.field')
             ->setOption('id', $this->getUniqueId() . '-max-age-container')
             ->setOption('description', Html::fromHtml($translator->translate('max_age.description')))
-            ->addConditionOn($form['cache_control_enabled'], $form::EQUAL, true)
+            ->addConditionOn($form['cache_control_enabled'], $form::Equal, true)
                 ->setRequired('max_age.required')
-                ->addRule($form::INTEGER, 'max_age.rule.integer')
-                ->addRule($form::MIN, 'max_age.rule.min', 0);
+                ->addRule($form::Integer, 'max_age.rule.integer')
+                ->addRule($form::Min, 'max_age.rule.min', 0);
 
         $form->addProtection('//layout.form_protection');
 

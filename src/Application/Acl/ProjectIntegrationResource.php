@@ -6,6 +6,6 @@ namespace App\Application\Acl;
 
 final class ProjectIntegrationResource extends AbstractResource
 {
-    public const READ = 'read';
-    public const UPDATE = 'update';
+    public const string READ = 'read';
+    public const string UPDATE = 'update';
 }

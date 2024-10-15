@@ -20,10 +20,10 @@ use League\Csv\Statement;
 
 final class CsvReader extends AbstractReader
 {
-    public const OPTION_DELIMITER = 'delimiter';
-    public const OPTION_ENCLOSURE = 'enclosure';
-    public const OPTION_ESCAPE = 'escape';
-    public const OPTION_HAS_HEADER = 'has_header';
+    public const string OPTION_DELIMITER = 'delimiter';
+    public const string OPTION_ENCLOSURE = 'enclosure';
+    public const string OPTION_ESCAPE = 'escape';
+    public const string OPTION_HAS_HEADER = 'has_header';
 
     public static function fromFile(FileResource $resource): self
     {

@@ -11,10 +11,10 @@ use App\Domain\GlobalSettings\GlobalSettingsRepositoryInterface;
 use App\Domain\GlobalSettings\ValueObject\EnvironmentSettings;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class PutEnvironmentSettingsCommandHandler implements CommandHandlerInterface
+final readonly class PutEnvironmentSettingsCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly GlobalSettingsRepositoryInterface $globalSettingsRepository,
+        private GlobalSettingsRepositoryInterface $globalSettingsRepository,
     ) {}
 
     public function __invoke(PutEnvironmentSettingsCommand $command): void

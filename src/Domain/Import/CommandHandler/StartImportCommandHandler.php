@@ -9,10 +9,10 @@ use App\Domain\Import\Import;
 use App\Domain\Import\ImportRepositoryInterface;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class StartImportCommandHandler implements CommandHandlerInterface
+final readonly class StartImportCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly ImportRepositoryInterface $importRepository,
+        private ImportRepositoryInterface $importRepository,
     ) {}
 
     public function __invoke(StartImportCommand $command): void

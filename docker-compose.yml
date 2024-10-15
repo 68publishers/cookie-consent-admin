@@ -1,8 +1,6 @@
-version: "3.7"
-
 services:
     app:
-        image: 68publishers/php:8.1-unit-dev-2.2.0
+        image: 68publishers/php:8.3-unit-dev-1.0.0
         user: "www-data:www-data"
         container_name: cmp-app
         profiles:

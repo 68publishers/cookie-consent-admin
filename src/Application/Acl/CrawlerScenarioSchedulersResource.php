@@ -6,8 +6,8 @@ namespace App\Application\Acl;
 
 final class CrawlerScenarioSchedulersResource extends AbstractResource
 {
-    public const READ = 'read';
-    public const CREATE = 'create';
-    public const UPDATE = 'update';
-    public const DELETE = 'delete';
+    public const string READ = 'read';
+    public const string CREATE = 'create';
+    public const string UPDATE = 'update';
+    public const string DELETE = 'delete';
 }

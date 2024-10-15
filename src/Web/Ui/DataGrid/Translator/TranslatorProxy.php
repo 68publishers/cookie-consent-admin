@@ -5,17 +5,16 @@ declare(strict_types=1);
 namespace App\Web\Ui\DataGrid\Translator;
 
 use Nette\Localization\Translator;
-use Nette\Utils\Strings;
 
-final class TranslatorProxy implements Translator
+final readonly class TranslatorProxy implements Translator
 {
     public function __construct(
-        private readonly Translator $translator,
+        private Translator $translator,
     ) {}
 
     public function translate($message, ...$parameters): string
     {
-        if (is_string($message) && Strings::startsWith($message, 'ublaboo_datagrid')) {
+        if (is_string($message) && str_starts_with($message, 'ublaboo_datagrid')) {
             $message = '//' . $message;
         }
 

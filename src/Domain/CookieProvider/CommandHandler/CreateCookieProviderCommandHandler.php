@@ -10,11 +10,11 @@ use App\Domain\CookieProvider\CookieProvider;
 use App\Domain\CookieProvider\CookieProviderRepositoryInterface;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class CreateCookieProviderCommandHandler implements CommandHandlerInterface
+final readonly class CreateCookieProviderCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly CookieProviderRepositoryInterface $cookieProviderRepository,
-        private readonly CheckCodeUniquenessInterface $checkCodeUniqueness,
+        private CookieProviderRepositoryInterface $cookieProviderRepository,
+        private CheckCodeUniquenessInterface $checkCodeUniqueness,
     ) {}
 
     public function __invoke(CreateCookieProviderCommand $command): void

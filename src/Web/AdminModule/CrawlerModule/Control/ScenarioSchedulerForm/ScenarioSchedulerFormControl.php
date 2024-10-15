@@ -20,7 +20,6 @@ use App\Web\Ui\Form\FormFactoryInterface;
 use JsonException;
 use Nette\Application\UI\Form;
 use Nette\Forms\Controls\TextArea;
-use Nette\Utils\Strings;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 use SixtyEightPublishers\CrawlerClient\Controller\ScenarioScheduler\RequestBody\ScenarioSchedulerRequestBody;
 use SixtyEightPublishers\CrawlerClient\Controller\ScenarioScheduler\ScenarioSchedulerResponse;
@@ -65,7 +64,7 @@ final class ScenarioSchedulerFormControl extends Control
 
         $form->addText('name', 'name.field')
             ->setRequired('name.required')
-            ->addRule($form::MAX_LENGTH, 'name.rule_max_length', 255);
+            ->addRule($form::MaxLength, 'name.rule_max_length', 255);
 
         $form->addText('expression', 'expression.field')
             ->setRequired('expression.required')
@@ -101,7 +100,7 @@ final class ScenarioSchedulerFormControl extends Control
             $enabledCategories = [];
 
             foreach ($responseBody->flags as $flagName => $flagValue) {
-                if (Strings::startsWith($flagName, 'category.') && '1' === $flagValue) {
+                if (str_starts_with($flagName, 'category.') && '1' === $flagValue) {
                     $enabledCategories[] = substr($flagName, 9);
                 }
             }

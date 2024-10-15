@@ -12,13 +12,13 @@ use App\Domain\Cookie\Cookie;
 use App\Domain\Cookie\CookieRepositoryInterface;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class CreateCookieCommandHandler implements CommandHandlerInterface
+final readonly class CreateCookieCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly CookieRepositoryInterface $cookieRepository,
-        private readonly CheckCategoryExistsInterface $checkCategoryExists,
-        private readonly CheckCookieProviderExistsInterface $checkCookieProviderExists,
-        private readonly CheckNameUniquenessInterface $checkNameUniqueness,
+        private CookieRepositoryInterface $cookieRepository,
+        private CheckCategoryExistsInterface $checkCategoryExists,
+        private CheckCookieProviderExistsInterface $checkCookieProviderExists,
+        private CheckNameUniquenessInterface $checkNameUniqueness,
     ) {}
 
     public function __invoke(CreateCookieCommand $command): void

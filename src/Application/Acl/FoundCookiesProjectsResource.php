@@ -6,5 +6,5 @@ namespace App\Application\Acl;
 
 final class FoundCookiesProjectsResource extends AbstractResource
 {
-    public const READ = 'read';
+    public const string READ = 'read';
 }

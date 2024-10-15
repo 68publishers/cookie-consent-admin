@@ -23,8 +23,8 @@ use SixtyEightPublishers\UserBundle\Bridge\Nette\Security\Identity;
 #[LoggedIn]
 abstract class AdminPresenter extends Presenter
 {
-    private const MENU_NAME_SIDEBAR = 'sidebar';
-    private const MENU_NAME_PROFILE = 'profile';
+    private const string MENU_NAME_SIDEBAR = 'sidebar';
+    private const string MENU_NAME_PROFILE = 'profile';
 
     protected GlobalSettingsInterface $globalSettings;
 

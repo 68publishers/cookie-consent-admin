@@ -12,10 +12,10 @@ use App\Domain\Shared\ValueObject\Locales;
 use App\Domain\Shared\ValueObject\LocalesConfig;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class PutLocalizationSettingsCommandHandler implements CommandHandlerInterface
+final readonly class PutLocalizationSettingsCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly GlobalSettingsRepositoryInterface $globalSettingsRepository,
+        private GlobalSettingsRepositoryInterface $globalSettingsRepository,
     ) {}
 
     public function __invoke(PutLocalizationSettingsCommand $command): void

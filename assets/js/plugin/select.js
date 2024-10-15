@@ -1,7 +1,7 @@
 'use strict';
 
 function Select(Alpine) {
-    require('Vendor/nasext/dependent-select-box/client-side/dependentSelectBox');
+    require('Vendor/tg666/dependent-select-box/client-side/dependentSelectBox');
 
     let watchedComponentIds = [];
     let autoincrement = 0;

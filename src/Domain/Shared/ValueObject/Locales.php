@@ -8,7 +8,7 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AbstractValueObje
 
 final class Locales extends AbstractValueObjectSet
 {
-    public const ITEM_CLASSNAME = Locale::class;
+    public const string ITEM_CLASSNAME = Locale::class;
 
     /**
      * @param string $value

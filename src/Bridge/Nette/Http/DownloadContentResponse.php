@@ -8,13 +8,13 @@ use Nette\Application\Response;
 use Nette\Http\IRequest;
 use Nette\Http\IResponse;
 
-final class DownloadContentResponse implements Response
+final readonly class DownloadContentResponse implements Response
 {
     public function __construct(
-        private readonly string $content,
-        private readonly string $name,
-        private readonly string $contentType,
-        private readonly bool $forceDownload = true,
+        private string $content,
+        private string $name,
+        private string $contentType,
+        private bool $forceDownload = true,
     ) {}
 
     public function send(IRequest $httpRequest, IResponse $httpResponse): void

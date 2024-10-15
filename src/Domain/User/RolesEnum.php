@@ -6,8 +6,8 @@ namespace App\Domain\User;
 
 final class RolesEnum
 {
-    public const MANAGER = 'manager';
-    public const ADMIN = 'admin';
+    public const string MANAGER = 'manager';
+    public const string ADMIN = 'admin';
 
     private function __construct() {}
 

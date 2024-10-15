@@ -14,11 +14,11 @@ use SixtyEightPublishers\ArchitectureBundle\Bus\CommandBusInterface;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 use SixtyEightPublishers\ArchitectureBundle\Event\EventHandlerInterface;
 
-final class CreateCookieProviderWhenProjectCreated implements EventHandlerInterface
+final readonly class CreateCookieProviderWhenProjectCreated implements EventHandlerInterface
 {
     public function __construct(
-        private readonly CommandBusInterface $commandBus,
-        private readonly QueryBusInterface $queryBus,
+        private CommandBusInterface $commandBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(ProjectCreated $event): void

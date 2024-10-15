@@ -41,7 +41,7 @@ final class PasswordChangeControl extends Control
 
         $form->addPassword('new_password_verify', 'new_password_verify.field')
             ->setRequired('new_password_verify.required')
-            ->addRule($form::EQUAL, 'new_password_verify.rule_equal', $form->getComponent('new_password'))
+            ->addRule($form::Equal, 'new_password_verify.rule_equal', $form->getComponent('new_password'))
             ->setOmitted();
 
         $form->addProtection('//layout.form_protection');

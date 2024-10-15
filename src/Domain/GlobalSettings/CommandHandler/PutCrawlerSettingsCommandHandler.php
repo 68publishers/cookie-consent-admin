@@ -10,10 +10,10 @@ use App\Domain\GlobalSettings\GlobalSettingsRepositoryInterface;
 use App\Domain\GlobalSettings\ValueObject\CrawlerSettings;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class PutCrawlerSettingsCommandHandler implements CommandHandlerInterface
+final readonly class PutCrawlerSettingsCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly GlobalSettingsRepositoryInterface $globalSettingsRepository,
+        private GlobalSettingsRepositoryInterface $globalSettingsRepository,
     ) {}
 
     public function __invoke(PutCrawlerSettingsCommand $command): void

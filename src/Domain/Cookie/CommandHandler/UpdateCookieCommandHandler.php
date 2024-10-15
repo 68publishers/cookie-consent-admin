@@ -11,12 +11,12 @@ use App\Domain\Cookie\CookieRepositoryInterface;
 use App\Domain\Cookie\ValueObject\CookieId;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class UpdateCookieCommandHandler implements CommandHandlerInterface
+final readonly class UpdateCookieCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly CookieRepositoryInterface $cookieRepository,
-        private readonly CheckCategoryExistsInterface $checkCategoryExists,
-        private readonly CheckNameUniquenessInterface $checkNameUniqueness,
+        private CookieRepositoryInterface $cookieRepository,
+        private CheckCategoryExistsInterface $checkCategoryExists,
+        private CheckNameUniquenessInterface $checkNameUniqueness,
     ) {}
 
     public function __invoke(UpdateCookieCommand $command): void

@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 final class Estimate
 {
-    public const REGEX = '/^(?:(?<years>\d+)y\s*)?(?:(?<months>\d+)m\s*)?(?:(?<days>\d+)d\s*)?(?:(?<hours>\d+)h\s*)?(?:(?<minutes>\d+)i\s*)?(?:(?<seconds>\d+)s\s*)?$/';
+    public const string REGEX = '/^(?:(?<years>\d+)y\s*)?(?:(?<months>\d+)m\s*)?(?:(?<days>\d+)d\s*)?(?:(?<hours>\d+)h\s*)?(?:(?<minutes>\d+)i\s*)?(?:(?<seconds>\d+)s\s*)?$/';
 
     private function __construct() {}
 

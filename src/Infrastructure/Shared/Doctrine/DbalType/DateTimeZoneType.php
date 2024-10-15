@@ -12,7 +12,7 @@ use Throwable;
 
 final class DateTimeZoneType extends StringType
 {
-    public const NAME = 'datetime_zone';
+    public const string NAME = 'datetime_zone';
 
     public function getName(): string
     {

@@ -137,15 +137,15 @@ final class CookieFormControl extends Control
             ->setItems([ProcessingTime::PERSISTENT, ProcessingTime::SESSION, 'expiration'], false)
             ->setRequired('processing_time.required')
             ->setDefaultValue(ProcessingTime::PERSISTENT)
-            ->addCondition($form::EQUAL, 'expiration')
+            ->addCondition($form::Equal, 'expiration')
                 ->toggle('#' . $this->getUniqueId() . '-processing_time_mask');
 
         $form->addText('processing_time_mask', 'processing_time_mask.field')
             ->setOption('id', $this->getUniqueId() . '-processing_time_mask')
             ->setOption('description', 'processing_time_mask.description')
-            ->addConditionOn($form->getComponent('processing_time'), $form::EQUAL, 'expiration')
+            ->addConditionOn($form->getComponent('processing_time'), $form::Equal, 'expiration')
                 ->setRequired('processing_time_mask.required')
-                ->addRule($form::PATTERN, 'processing_time_mask.rule_pattern', '(?:(?<years>\d+)y\s*)?(?:(?<months>\d+)m\s*)?(?:(?<days>\d+)d\s*)?(?:(?<hours>\d+)h\s*)?(?:(?<minutes>\d+)i\s*)?(?:(?<seconds>\d+)s\s*)?');
+                ->addRule($form::Pattern, 'processing_time_mask.rule_pattern', '(?:(?<years>\d+)y\s*)?(?:(?<months>\d+)m\s*)?(?:(?<days>\d+)d\s*)?(?:(?<hours>\d+)h\s*)?(?:(?<minutes>\d+)i\s*)?(?:(?<seconds>\d+)s\s*)?');
 
         $form->addCheckbox('active', 'active.field')
             ->setDefaultValue(true);

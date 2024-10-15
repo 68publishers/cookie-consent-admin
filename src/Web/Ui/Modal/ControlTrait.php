@@ -25,11 +25,11 @@ trait ControlTrait
 
         $this->openModal($modalControl, [
             ModalDispatcherInterface::PARAMS_ON_OPEN => [
-                Presenter::SIGNAL_KEY => $this->getParameterId('openModal'),
+                Presenter::SignalKey => $this->getParameterId('openModal'),
                 $this->getParameterId('modal') => $modal,
             ],
             ModalDispatcherInterface::REMOVE_PARAMS_ON_CLOSE => [
-                Presenter::SIGNAL_KEY,
+                Presenter::SignalKey,
                 $this->getParameterId('modal') . '*',
             ],
         ], true);

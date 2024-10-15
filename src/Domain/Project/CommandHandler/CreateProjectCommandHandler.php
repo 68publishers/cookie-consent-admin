@@ -10,11 +10,11 @@ use App\Domain\Project\Project;
 use App\Domain\Project\ProjectRepositoryInterface;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class CreateProjectCommandHandler implements CommandHandlerInterface
+final readonly class CreateProjectCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly ProjectRepositoryInterface $projectRepository,
-        private readonly CheckCodeUniquenessInterface $checkCodeUniqueness,
+        private ProjectRepositoryInterface $projectRepository,
+        private CheckCodeUniquenessInterface $checkCodeUniqueness,
     ) {}
 
     public function __invoke(CreateProjectCommand $command): void

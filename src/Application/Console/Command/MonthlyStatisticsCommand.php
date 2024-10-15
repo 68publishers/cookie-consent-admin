@@ -49,10 +49,10 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  */
 final class MonthlyStatisticsCommand extends Command
 {
-    private const FORMAT_TABLE = 'table';
-    private const FORMAT_CSV = 'csv';
+    private const string FORMAT_TABLE = 'table';
+    private const string FORMAT_CSV = 'csv';
 
-    private const FORMATS = [
+    private const array FORMATS = [
         self::FORMAT_TABLE,
         self::FORMAT_CSV,
     ];

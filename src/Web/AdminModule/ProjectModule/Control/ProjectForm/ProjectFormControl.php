@@ -69,8 +69,8 @@ final class ProjectFormControl extends Control
 
         $form->addText('code', 'code.field')
             ->setRequired('code.required')
-            ->addRule($form::PATTERN, 'code.rule_pattern', '[a-z0-9_\-\.]+')
-            ->addRule($form::MAX_LENGTH, 'code.rule_max_length', Code::MAX_LENGTH)
+            ->addRule($form::Pattern, 'code.rule_pattern', '[a-z0-9_\-\.]+')
+            ->addRule($form::MaxLength, 'code.rule_max_length', Code::MAX_LENGTH)
             ->setOption('description', 'code.description');
 
         $form->addText('domain', 'domain.field')
@@ -80,7 +80,7 @@ final class ProjectFormControl extends Control
         $form->addText('color', 'color.field')
             ->setDefaultValue('#ffffff')
             ->setRequired('color.required')
-            ->addRule($form::PATTERN, 'color.rule_pattern', '#([a-fA-F0-9]{3}){1,2}\b')
+            ->addRule($form::Pattern, 'color.rule_pattern', '#([a-fA-F0-9]{3}){1,2}\b')
             ->setOption('type', 'color-picker');
 
         $form->addCheckbox('active', 'active.field')

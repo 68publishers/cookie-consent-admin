@@ -6,7 +6,7 @@ namespace App\Application\Cookie;
 
 final class Template
 {
-    public const OPTION_NO_CACHE = 'no_cache';
+    public const string OPTION_NO_CACHE = 'no_cache';
 
     private string $projectId;
 

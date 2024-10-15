@@ -10,10 +10,10 @@ use App\Domain\GlobalSettings\GlobalSettingsRepositoryInterface;
 use App\Domain\GlobalSettings\ValueObject\AzureAuthSettings;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class PutAzureAuthSettingsCommandHandler implements CommandHandlerInterface
+final readonly class PutAzureAuthSettingsCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly GlobalSettingsRepositoryInterface $globalSettingsRepository,
+        private GlobalSettingsRepositoryInterface $globalSettingsRepository,
     ) {}
 
     public function __invoke(PutAzureAuthSettingsCommand $command): void

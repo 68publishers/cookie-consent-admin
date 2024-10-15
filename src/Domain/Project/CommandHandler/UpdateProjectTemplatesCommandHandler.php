@@ -12,11 +12,11 @@ use App\Domain\Project\ValueObject\Template;
 use App\Domain\Shared\ValueObject\Locale;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class UpdateProjectTemplatesCommandHandler implements CommandHandlerInterface
+final readonly class UpdateProjectTemplatesCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly ProjectRepositoryInterface $projectRepository,
-        private readonly TemplateValidatorInterface $templateValidator,
+        private ProjectRepositoryInterface $projectRepository,
+        private TemplateValidatorInterface $templateValidator,
     ) {}
 
     public function __invoke(UpdateProjectTemplatesCommand $command): void

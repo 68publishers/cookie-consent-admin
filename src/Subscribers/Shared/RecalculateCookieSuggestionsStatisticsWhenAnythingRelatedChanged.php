@@ -34,11 +34,11 @@ use SixtyEightPublishers\ArchitectureBundle\Event\EventHandlerInterface;
 use Symfony\Component\Messenger\Handler\MessageSubscriberInterface;
 use Symfony\Component\Messenger\Stamp\DispatchAfterCurrentBusStamp;
 
-final class RecalculateCookieSuggestionsStatisticsWhenAnythingRelatedChanged implements EventHandlerInterface, MessageSubscriberInterface
+final readonly class RecalculateCookieSuggestionsStatisticsWhenAnythingRelatedChanged implements EventHandlerInterface, MessageSubscriberInterface
 {
     public function __construct(
-        private readonly CommandBusInterface $commandBus,
-        private readonly QueryBusInterface $queryBus,
+        private CommandBusInterface $commandBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public static function getHandledMessages(): iterable

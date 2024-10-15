@@ -20,10 +20,10 @@ use League\Csv\Writer;
 
 final class CsvWriter extends AbstractWriter
 {
-    public const OPTION_DELIMITER = 'delimiter';
-    public const OPTION_ENCLOSURE = 'enclosure';
-    public const OPTION_ESCAPE = 'escape';
-    public const INCLUDE_BOM = 'include_bom';
+    public const string OPTION_DELIMITER = 'delimiter';
+    public const string OPTION_ENCLOSURE = 'enclosure';
+    public const string OPTION_ESCAPE = 'escape';
+    public const string INCLUDE_BOM = 'include_bom';
 
     private ?Writer $writer = null;
 

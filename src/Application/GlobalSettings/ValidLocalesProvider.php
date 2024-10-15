@@ -7,11 +7,11 @@ namespace App\Application\GlobalSettings;
 use App\Domain\Shared\ValueObject\Locale as LocaleValueObject;
 use App\Domain\Shared\ValueObject\LocalesConfig;
 
-final class ValidLocalesProvider
+final readonly class ValidLocalesProvider
 {
     public function __construct(
-        private readonly GlobalSettingsInterface $globalSettings,
-        private readonly ?LocalesConfig $localesConfig = null,
+        private GlobalSettingsInterface $globalSettings,
+        private ?LocalesConfig $localesConfig = null,
     ) {}
 
     /**

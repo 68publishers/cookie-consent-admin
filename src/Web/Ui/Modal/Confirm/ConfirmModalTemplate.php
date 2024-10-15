@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Web\Ui\Modal\Confirm;
 
-use Nette\Bridges\ApplicationLatte\Template;
+use App\Web\Ui\Modal\AbstractModalTemplate;
 use Nette\Utils\Html;
 
-final class ConfirmModalTemplate extends Template
+final class ConfirmModalTemplate extends AbstractModalTemplate
 {
     public Html $title;
 

@@ -8,7 +8,7 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AbstractValueObje
 
 final class NotificationPreferences extends AbstractValueObjectSet
 {
-    public const ITEM_CLASSNAME = NotificationType::class;
+    public const string ITEM_CLASSNAME = NotificationType::class;
 
     /**
      * @param string $value

@@ -14,8 +14,8 @@ use JsonException;
 
 final class JsonWriter extends AbstractWriter
 {
-    public const OPTION_PRETTY = 'pretty';
-    public const OPTION_UNESCAPED_UNICODE = 'unescaped_unicode';
+    public const string OPTION_PRETTY = 'pretty';
+    public const string OPTION_UNESCAPED_UNICODE = 'unescaped_unicode';
 
     private array $data = [];
 

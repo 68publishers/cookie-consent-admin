@@ -13,7 +13,6 @@ use App\Application\Crawler\CrawlerClientProvider;
 use App\Application\GlobalSettings\GlobalSettingsInterface;
 use DateTimeImmutable;
 use Exception;
-use Nette\Utils\Strings;
 use Psr\Log\LoggerInterface;
 use SixtyEightPublishers\CrawlerClient\Controller\Scenario\ResponseBody\ScenarioResponseBody;
 use Throwable;
@@ -72,7 +71,7 @@ final class ReceiveResultController extends AbstractCrawlerController
         $acceptedCategories = [];
 
         foreach ($scenarioResponseBody->flags as $flagName => $flagValue) {
-            if (Strings::startsWith($flagName, 'category.') && '1' === $flagValue) {
+            if (str_starts_with($flagName, 'category.') && '1' === $flagValue) {
                 $acceptedCategories[] = substr($flagName, 9);
             }
         }

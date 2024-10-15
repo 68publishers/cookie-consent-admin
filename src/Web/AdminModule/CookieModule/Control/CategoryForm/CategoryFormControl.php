@@ -44,7 +44,7 @@ final class CategoryFormControl extends Control
 
         $form->addText('code', 'code.field')
             ->setRequired('code.required')
-            ->addRule($form::MAX_LENGTH, 'code.rule_max_length', Code::MAX_LENGTH);
+            ->addRule($form::MaxLength, 'code.rule_max_length', Code::MAX_LENGTH);
 
         $form->addCheckbox('active', 'active.field')
             ->setDefaultValue(true);

@@ -7,7 +7,9 @@ namespace App\Bridge\Monolog\Handler;
 use App\Bridge\Monolog\Formatter\ConsoleFormatter;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractProcessingHandler;
-use Monolog\Logger;
+use Monolog\Level;
+use Monolog\LogRecord;
+use RuntimeException;
 use Symfony\Component\Console\ConsoleEvents;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
@@ -16,32 +18,36 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class ConsoleHandler extends AbstractProcessingHandler implements EventSubscriberInterface
 {
+    /** @var array<int, Level> */
     private array $verbosityLevelMap = [
-        OutputInterface::VERBOSITY_QUIET => Logger::ERROR,
-        OutputInterface::VERBOSITY_NORMAL => Logger::WARNING,
-        OutputInterface::VERBOSITY_VERBOSE => Logger::NOTICE,
-        OutputInterface::VERBOSITY_VERY_VERBOSE => Logger::INFO,
-        OutputInterface::VERBOSITY_DEBUG => Logger::DEBUG,
+        OutputInterface::VERBOSITY_QUIET => Level::Error,
+        OutputInterface::VERBOSITY_NORMAL => Level::Warning,
+        OutputInterface::VERBOSITY_VERBOSE => Level::Notice,
+        OutputInterface::VERBOSITY_VERY_VERBOSE => Level::Info,
+        OutputInterface::VERBOSITY_DEBUG => Level::Debug,
     ];
 
+    /**
+     * @param array<int, Level> $verbosityLevelMap
+     */
     public function __construct(
         private ?OutputInterface $output = null,
         bool $bubble = true,
         array $verbosityLevelMap = [],
     ) {
-        parent::__construct(Logger::DEBUG, $bubble);
+        parent::__construct(Level::Debug, $bubble);
 
         if ($verbosityLevelMap) {
             $this->verbosityLevelMap = $verbosityLevelMap;
         }
     }
 
-    public function isHandling(array $record): bool
+    public function isHandling(LogRecord $record): bool
     {
         return $this->updateLevel() && parent::isHandling($record);
     }
 
-    public function handle(array $record): bool
+    public function handle(LogRecord $record): bool
     {
         return $this->updateLevel() && parent::handle($record);
     }
@@ -59,7 +65,7 @@ final class ConsoleHandler extends AbstractProcessingHandler implements EventSub
     }
 
     /**
-     *@internal
+     * @internal
      */
     public function onCommand(ConsoleCommandEvent $event): void
     {
@@ -82,15 +88,19 @@ final class ConsoleHandler extends AbstractProcessingHandler implements EventSub
         ];
     }
 
-    protected function write(array $record): void
+    protected function write(LogRecord $record): void
     {
         $output = $this->output;
 
-        if ($record['level'] >= Logger::ERROR && $output instanceof ConsoleOutputInterface) {
+        if (null === $output) {
+            throw new RuntimeException('Can not write record, no output specified.');
+        }
+
+        if ($record->level->value >= Level::Error->value && $output instanceof ConsoleOutputInterface) {
             $output = $output->getErrorOutput();
         }
 
-        $output->write((string) $record['formatted'], false, $this->output->getVerbosity());
+        $output->write((string) $record->formatted, false, $output->getVerbosity());
     }
 
     protected function getDefaultFormatter(): FormatterInterface
@@ -112,7 +122,7 @@ final class ConsoleHandler extends AbstractProcessingHandler implements EventSub
         if (isset($this->verbosityLevelMap[$verbosity])) {
             $this->setLevel($this->verbosityLevelMap[$verbosity]);
         } else {
-            $this->setLevel(Logger::DEBUG);
+            $this->setLevel(Level::Debug);
         }
 
         return true;

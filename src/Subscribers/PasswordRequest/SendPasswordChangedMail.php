@@ -15,11 +15,11 @@ use SixtyEightPublishers\ForgotPasswordBundle\Domain\Event\PasswordChangeComplet
 use SixtyEightPublishers\UserBundle\ReadModel\Query\GetUserByEmailAddressQuery;
 use Symfony\Component\Messenger\Stamp\DispatchAfterCurrentBusStamp;
 
-final class SendPasswordChangedMail implements EventHandlerInterface
+final readonly class SendPasswordChangedMail implements EventHandlerInterface
 {
     public function __construct(
-        private readonly CommandBusInterface $commandBus,
-        private readonly QueryBusInterface $queryBus,
+        private CommandBusInterface $commandBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(PasswordChangeCompleted $event): void

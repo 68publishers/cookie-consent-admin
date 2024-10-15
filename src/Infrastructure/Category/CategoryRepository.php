@@ -11,10 +11,10 @@ use App\Domain\Category\ValueObject\CategoryId;
 use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AggregateId;
 use SixtyEightPublishers\ArchitectureBundle\Infrastructure\Common\Repository\AggregateRootRepositoryInterface;
 
-final class CategoryRepository implements CategoryRepositoryInterface
+final readonly class CategoryRepository implements CategoryRepositoryInterface
 {
     public function __construct(
-        private readonly AggregateRootRepositoryInterface $aggregateRootRepository,
+        private AggregateRootRepositoryInterface $aggregateRootRepository,
     ) {}
 
     public function save(Category $category): void

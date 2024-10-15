@@ -51,7 +51,7 @@ final class ProviderFormControl extends Control
 
         $form->addText('code', 'code.field')
             ->setRequired('code.required')
-            ->addRule($form::MAX_LENGTH, 'code.rule_max_length', Code::MAX_LENGTH);
+            ->addRule($form::MaxLength, 'code.rule_max_length', Code::MAX_LENGTH);
 
         $form->addText('name', 'name.field')
             ->setRequired('name.required');
@@ -62,7 +62,7 @@ final class ProviderFormControl extends Control
             ->setDefaultValue(ProviderType::THIRD_PARTY);
 
         $form->addText('link', 'link.field')
-            ->addCondition($form::FILLED, true)
+            ->addCondition($form::Filled, true)
                 ->addRule($form::URL, 'link.rule_url');
 
         $form->addCheckbox('active', 'active.field')

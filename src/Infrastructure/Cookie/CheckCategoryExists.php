@@ -11,10 +11,10 @@ use App\ReadModel\Category\CategoryView;
 use App\ReadModel\Category\GetCategoryByIdQuery;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class CheckCategoryExists implements CheckCategoryExistsInterface
+final readonly class CheckCategoryExists implements CheckCategoryExistsInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(CategoryId $categoryId): void

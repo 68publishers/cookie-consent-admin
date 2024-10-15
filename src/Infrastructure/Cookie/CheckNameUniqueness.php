@@ -14,10 +14,10 @@ use App\ReadModel\Cookie\CookieView;
 use App\ReadModel\Cookie\GetCookieByNameAndCookieProviderAndCategoryQuery;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class CheckNameUniqueness implements CheckNameUniquenessInterface
+final readonly class CheckNameUniqueness implements CheckNameUniquenessInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(CookieId $cookieId, Name $name, CookieProviderId $cookieProviderId, CategoryId $categoryId): void

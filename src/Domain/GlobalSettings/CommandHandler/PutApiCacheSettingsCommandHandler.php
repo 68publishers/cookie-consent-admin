@@ -10,10 +10,10 @@ use App\Domain\GlobalSettings\GlobalSettingsRepositoryInterface;
 use App\Domain\GlobalSettings\ValueObject\ApiCache;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class PutApiCacheSettingsCommandHandler implements CommandHandlerInterface
+final readonly class PutApiCacheSettingsCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly GlobalSettingsRepositoryInterface $globalSettingsRepository,
+        private GlobalSettingsRepositoryInterface $globalSettingsRepository,
     ) {}
 
     public function __invoke(PutApiCacheSettingsCommand $command): void

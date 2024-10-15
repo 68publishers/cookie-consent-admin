@@ -9,10 +9,10 @@ use App\Domain\Project\ProjectRepositoryInterface;
 use App\Domain\Project\ValueObject\ProjectId;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class DeleteProjectCommandHandler implements CommandHandlerInterface
+final readonly class DeleteProjectCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly ProjectRepositoryInterface $projectRepository,
+        private ProjectRepositoryInterface $projectRepository,
     ) {}
 
     public function __invoke(DeleteProjectCommand $command): void

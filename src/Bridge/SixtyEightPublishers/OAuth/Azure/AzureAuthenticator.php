@@ -28,13 +28,13 @@ use TheNetworg\OAuth2\Client\Provider\Azure;
 use TheNetworg\OAuth2\Client\Token\AccessToken;
 use Throwable;
 
-final class AzureAuthenticator implements AuthenticatorInterface
+final readonly class AzureAuthenticator implements AuthenticatorInterface
 {
     public function __construct(
-        private readonly CommandBusInterface $commandBus,
-        private readonly QueryBusInterface $queryBus,
-        private readonly LoggerInterface $logger,
-        private readonly Profiles $profiles,
+        private CommandBusInterface $commandBus,
+        private QueryBusInterface $queryBus,
+        private LoggerInterface $logger,
+        private Profiles $profiles,
     ) {}
 
     public function authenticate(string $flowName, AuthorizationResult $authorizationResult): IIdentity

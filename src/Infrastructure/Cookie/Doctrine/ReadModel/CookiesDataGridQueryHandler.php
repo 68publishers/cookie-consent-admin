@@ -23,7 +23,7 @@ final class CookiesDataGridQueryHandler implements QueryHandlerInterface
 {
     use DataGridQueryHandlerTrait;
 
-    public const FILTER_ENVIRONMENTS_ALL = '//all//';
+    public const string FILTER_ENVIRONMENTS_ALL = '//all//';
 
     /**
      * @throws NonUniqueResultException|NoResultException|JsonException|Exception

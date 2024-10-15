@@ -14,11 +14,11 @@ use SixtyEightPublishers\ArchitectureBundle\Infrastructure\Doctrine\ReadModel\Do
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\View\ViewFactoryInterface;
 
-final class FindProjectsAccessibilityByCodeQueryHandler implements QueryHandlerInterface
+final readonly class FindProjectsAccessibilityByCodeQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
-        private readonly ViewFactoryInterface $viewFactory,
+        private EntityManagerInterface $em,
+        private ViewFactoryInterface $viewFactory,
     ) {}
 
     /**

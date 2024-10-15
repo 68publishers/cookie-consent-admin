@@ -6,7 +6,7 @@ namespace App\ReadModel\Cookie;
 
 final class CookieDataForSuggestion
 {
-    public const METADATA_FIELD_SAME_DOMAIN = 'same_domain';
+    public const string METADATA_FIELD_SAME_DOMAIN = 'same_domain';
 
     /** @var array<string, mixed> */
     private array $metadata = [];

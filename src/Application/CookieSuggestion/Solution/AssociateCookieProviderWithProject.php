@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Application\CookieSuggestion\Solution;
 
-final class AssociateCookieProviderWithProject implements SolutionInterface
+final readonly class AssociateCookieProviderWithProject implements SolutionInterface
 {
     public function __construct(
-        private readonly string $providerId,
-        private readonly string $providerName,
+        private string $providerId,
+        private string $providerName,
     ) {}
 
     public function getType(): string

@@ -10,8 +10,8 @@ use SixtyEightPublishers\EventDispatcherExtra\EventDispatcherAwareInterface;
 
 interface ModalDispatcherInterface extends JsonSerializable, EventDispatcherAwareInterface
 {
-    public const PARAMS_ON_OPEN = 'params_on_open';
-    public const REMOVE_PARAMS_ON_CLOSE = 'remove_params_on_close';
+    public const string PARAMS_ON_OPEN = 'params_on_open';
+    public const string REMOVE_PARAMS_ON_CLOSE = 'remove_params_on_close';
 
     public function dispatch(IComponent $modal, array $metadata = []): void;
 

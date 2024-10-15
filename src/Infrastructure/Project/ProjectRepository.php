@@ -11,10 +11,10 @@ use App\Domain\Project\ValueObject\ProjectId;
 use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AggregateId;
 use SixtyEightPublishers\ArchitectureBundle\Infrastructure\Common\Repository\AggregateRootRepositoryInterface;
 
-final class ProjectRepository implements ProjectRepositoryInterface
+final readonly class ProjectRepository implements ProjectRepositoryInterface
 {
     public function __construct(
-        private readonly AggregateRootRepositoryInterface $aggregateRootRepository,
+        private AggregateRootRepositoryInterface $aggregateRootRepository,
     ) {}
 
     public function save(Project $project): void

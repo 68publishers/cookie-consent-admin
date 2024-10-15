@@ -13,7 +13,7 @@ use App\Application\Project\Import\ProjectData;
  */
 final class KnownDescriptors
 {
-    public const ALL = [
+    public const array ALL = [
         CookieProviderData::class,
         CookieData::class,
         ProjectData::class,

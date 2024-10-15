@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- Changed minimum PHP version to `8.3`.
+- Changed `68publishers/php` Docker images to the latest versions.
+- Updated composer dependencies and codebase syntax (typed constants, readonly classes etc.).
+
 ## 1.0.0 - 2024-03-06
 
 ### Added

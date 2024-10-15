@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Web\AdminModule\CrawlerModule\Control\AbortScenario;
 
-use Nette\Bridges\ApplicationLatte\Template;
+use App\Web\Ui\Modal\AbstractModalTemplate;
 use SixtyEightPublishers\CrawlerClient\Controller\Scenario\ScenarioResponse;
 use Throwable;
 
-final class AbortScenarioModalTemplate extends Template
+final class AbortScenarioModalTemplate extends AbstractModalTemplate
 {
     public ?string $scenarioId = null;
 

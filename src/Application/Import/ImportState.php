@@ -6,9 +6,9 @@ namespace App\Application\Import;
 
 final class ImportState
 {
-    public const STATUS_RUNNING = 'running';
-    public const STATUS_COMPLETED = 'completed';
-    public const STATUS_FAILED = 'failed';
+    public const string STATUS_RUNNING = 'running';
+    public const string STATUS_COMPLETED = 'completed';
+    public const string STATUS_FAILED = 'failed';
 
     public array $importedIndexes = [];
 

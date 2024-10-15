@@ -16,10 +16,10 @@ use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\Batch;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\BatchUtils;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 
-final class CookieProviderExportQueryHandler implements QueryHandlerInterface
+final readonly class CookieProviderExportQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
+        private EntityManagerInterface $em,
     ) {}
 
     /**

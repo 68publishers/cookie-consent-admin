@@ -14,10 +14,10 @@ use App\Domain\Project\ValueObject\ProjectId;
 use App\Domain\Project\ValueObject\Template;
 use App\Domain\Shared\ValueObject\Locale;
 
-final class TemplateValidator implements TemplateValidatorInterface
+final readonly class TemplateValidator implements TemplateValidatorInterface
 {
     public function __construct(
-        private readonly TemplateRendererInterface $cookieTemplateRenderer,
+        private TemplateRendererInterface $cookieTemplateRenderer,
     ) {}
 
     public function __invoke(ProjectId $projectId, Template $template, Locale $locale): void

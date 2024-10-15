@@ -7,10 +7,10 @@ namespace App\Application\DataProcessor\Description;
 use App\Application\DataProcessor\Context\ContextInterface;
 use Nette\Schema\Elements\Type;
 
-final class Pattern implements TypeDescriptorPropertyInterface
+final readonly class Pattern implements TypeDescriptorPropertyInterface
 {
     public function __construct(
-        private readonly string $pattern,
+        private string $pattern,
     ) {}
 
     public function applyToType(Type $type, ContextInterface $context): Type

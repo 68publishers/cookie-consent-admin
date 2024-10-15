@@ -11,11 +11,11 @@ use App\Domain\Consent\ConsentRepositoryInterface;
 use App\Domain\Consent\Exception\UserIdentifierExistsException;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class StoreConsentCommandHandler implements CommandHandlerInterface
+final readonly class StoreConsentCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly ConsentRepositoryInterface $consentRepository,
-        private readonly CheckUserIdentifierNotExistsInterface $checkUserIdentifierNotExists,
+        private ConsentRepositoryInterface $consentRepository,
+        private CheckUserIdentifierNotExistsInterface $checkUserIdentifierNotExists,
     ) {}
 
     public function __invoke(StoreConsentCommand $command): void

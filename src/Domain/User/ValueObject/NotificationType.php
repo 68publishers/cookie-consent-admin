@@ -8,9 +8,9 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AbstractEnumValue
 
 final class NotificationType extends AbstractEnumValueObject
 {
-    public const CONSENT_DECREASED = 'consent_decreased';
-    public const WEEKLY_OVERVIEW = 'weekly_overview';
-    public const COOKIE_SUGGESTIONS = 'cookie_suggestions';
+    public const string CONSENT_DECREASED = 'consent_decreased';
+    public const string WEEKLY_OVERVIEW = 'weekly_overview';
+    public const string COOKIE_SUGGESTIONS = 'cookie_suggestions';
 
     public static function values(): array
     {

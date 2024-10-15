@@ -15,11 +15,11 @@ use SixtyEightPublishers\ArchitectureBundle\Infrastructure\Doctrine\ReadModel\Do
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\View\ViewFactoryInterface;
 
-final class FindUserProjectsQueryHandler implements QueryHandlerInterface
+final readonly class FindUserProjectsQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
-        private readonly ViewFactoryInterface $viewFactory,
+        private EntityManagerInterface $em,
+        private ViewFactoryInterface $viewFactory,
     ) {}
 
     /**

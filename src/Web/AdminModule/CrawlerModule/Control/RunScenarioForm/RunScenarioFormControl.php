@@ -56,7 +56,7 @@ final class RunScenarioFormControl extends Control
 
         $form->addText('name', 'name.field')
             ->setRequired('name.required')
-            ->addRule($form::MAX_LENGTH, 'name.rule_max_length', 255);
+            ->addRule($form::MaxLength, 'name.rule_max_length', 255);
 
         $form->addSelect('project', 'project.field', $this->getProjectOptions())
             ->checkDefaultValue(false)

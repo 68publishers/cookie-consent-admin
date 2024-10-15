@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Application\CookieSuggestion\Solution;
 
-final class CreateNewCookieWithNotAcceptedCategory implements SolutionInterface
+final readonly class CreateNewCookieWithNotAcceptedCategory implements SolutionInterface
 {
     public function __construct(
-        private readonly string $existingCookieId,
-        private readonly string $categoryCode,
-        private readonly string $providerName,
+        private string $existingCookieId,
+        private string $categoryCode,
+        private string $providerName,
     ) {}
 
     public function getType(): string

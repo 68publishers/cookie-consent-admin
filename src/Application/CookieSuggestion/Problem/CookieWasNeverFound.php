@@ -8,7 +8,7 @@ use App\Application\CookieSuggestion\Solution\Solutions;
 
 final class CookieWasNeverFound implements ProblemInterface
 {
-    public const TYPE = 'cookie_was_never_found';
+    public const string TYPE = 'cookie_was_never_found';
 
     public function __construct(
         private readonly Solutions $solutions,

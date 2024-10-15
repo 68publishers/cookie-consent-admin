@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Application\CookieSuggestion\Solution;
 
-final class IgnorePermanently implements SolutionInterface
+final readonly class IgnorePermanently implements SolutionInterface
 {
     public function __construct(
-        private readonly bool $virtualSuggestion = false,
+        private bool $virtualSuggestion = false,
     ) {}
 
     public function getType(): string

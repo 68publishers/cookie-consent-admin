@@ -1,4 +1,4 @@
-FROM 68publishers/php:8.1-cli-prod-1.2.0 as builder
+FROM 68publishers/php:8.3-cli-prod-1.0.0 as builder
 
 WORKDIR /build
 USER root
@@ -29,7 +29,7 @@ RUN set -ex \
     && yarn install --no-progress --non-interactive \
     && yarn run encore prod
 
-FROM 68publishers/php:8.1-unit-prod-2.2.0 as app
+FROM 68publishers/php:8.3-unit-prod-1.0.0 as app
 
 WORKDIR /var/www/html
 
@@ -44,7 +44,7 @@ COPY --from=builder --chown=www-data:www-data /build/vendor ./vendor/
 COPY --from=builder --chown=www-data:www-data /build/composer* .
 COPY --from=builder --chown=www-data:www-data /build/.env.local.php .
 
-FROM 68publishers/php:8.1-cli-prod-1.2.0 as worker
+FROM 68publishers/php:8.3-cli-prod-1.0.0 as worker
 
 USER root
 

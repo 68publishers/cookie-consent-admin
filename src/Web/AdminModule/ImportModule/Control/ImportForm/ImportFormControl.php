@@ -24,15 +24,15 @@ final class ImportFormControl extends Control
 {
     use FormFactoryOptionsTrait;
 
-    private const FORMAT_CSV = 'csv';
-    private const FORMAT_JSON = 'json';
+    private const string FORMAT_CSV = 'csv';
+    private const string FORMAT_JSON = 'json';
 
-    private const FORMATS = [
+    private const array FORMATS = [
         self::FORMAT_CSV,
         self::FORMAT_JSON,
     ];
 
-    private const CSV_SEPARATORS = [
+    private const array CSV_SEPARATORS = [
         'auto' => null,
         'comma' => ',',
         'semicolon' => ';',
@@ -75,7 +75,7 @@ final class ImportFormControl extends Control
             ->setTranslator(null)
             ->setRequired('format.required')
             ->setDefaultValue(self::FORMAT_CSV)
-            ->addCondition($form::EQUAL, self::FORMAT_CSV)
+            ->addCondition($form::Equal, self::FORMAT_CSV)
                 ->toggle('#' . $this->getUniqueId() . '-separator-container');
 
         $form->addSelect('separator', 'separator.field')
@@ -86,15 +86,15 @@ final class ImportFormControl extends Control
             ->setTranslator(null)
             ->setDefaultValue('auto')
             ->setOption('id', $this->getUniqueId() . '-separator-container')
-            ->addConditionOn($form['format'], $form::EQUAL, self::FORMAT_CSV)
+            ->addConditionOn($form['format'], $form::Equal, self::FORMAT_CSV)
                 ->setRequired('separator.required');
 
         $fileField
-            ->addConditionOn($form['format'], $form::EQUAL, self::FORMAT_CSV)
-                ->addRule($form::MIME_TYPE, 'file.rule.mime_type.csv', ['text/csv', 'text/plain'])
+            ->addConditionOn($form['format'], $form::Equal, self::FORMAT_CSV)
+                ->addRule($form::MimeType, 'file.rule.mime_type.csv', ['text/csv', 'text/plain'])
                 ->endCondition()
-            ->addConditionOn($form['format'], $form::EQUAL, self::FORMAT_JSON)
-                ->addRule($form::MIME_TYPE, 'file.rule.mime_type.json', ['application/json', 'text/plain'])
+            ->addConditionOn($form['format'], $form::Equal, self::FORMAT_JSON)
+                ->addRule($form::MimeType, 'file.rule.mime_type.json', ['application/json', 'text/plain'])
                 ->endCondition();
 
         if (null !== $this->strictImportType) {

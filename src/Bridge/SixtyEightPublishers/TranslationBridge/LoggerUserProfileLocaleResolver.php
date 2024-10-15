@@ -11,10 +11,10 @@ use SixtyEightPublishers\TranslationBridge\Localization\TranslatorLocaleResolver
 use SixtyEightPublishers\UserBundle\Application\Exception\IdentityException;
 use SixtyEightPublishers\UserBundle\Bridge\Nette\Security\Identity;
 
-final class LoggerUserProfileLocaleResolver implements TranslatorLocaleResolverInterface
+final readonly class LoggerUserProfileLocaleResolver implements TranslatorLocaleResolverInterface
 {
     public function __construct(
-        private readonly NetteUser $user,
+        private NetteUser $user,
     ) {}
 
     /**

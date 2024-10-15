@@ -6,5 +6,5 @@ namespace App\Application\Acl;
 
 final class ApplicationSettingsResource extends AbstractResource
 {
-    public const UPDATE = 'update';
+    public const string UPDATE = 'update';
 }

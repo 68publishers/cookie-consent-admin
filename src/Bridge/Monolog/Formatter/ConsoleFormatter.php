@@ -5,26 +5,29 @@ declare(strict_types=1);
 namespace App\Bridge\Monolog\Formatter;
 
 use Monolog\Formatter\LineFormatter;
-use Monolog\Logger;
+use Monolog\Level;
+use Monolog\LogRecord;
 
 final class ConsoleFormatter extends LineFormatter
 {
-    public const SIMPLE_FORMAT = "%start_tag%[%datetime%] %level_name%:%end_tag% %message% %context% %extra%\n";
+    public const string SIMPLE_FORMAT = "%extra.start_tag%[%datetime%] %level_name%:%extra.end_tag% %message% %context%\n";
 
-    public function format(array $record): string
+    public function format(LogRecord $record): string
     {
-        if ($record['level'] >= Logger::ERROR) {
-            $record['start_tag'] = '<error>';
-            $record['end_tag'] = '</error>';
-        } elseif ($record['level'] >= Logger::NOTICE) {
-            $record['start_tag'] = '<comment>';
-            $record['end_tag'] = '</comment>';
-        } elseif ($record['level'] >= Logger::INFO) {
-            $record['start_tag'] = '<info>';
-            $record['end_tag'] = '</info>';
+        $level = $record->level->value;
+
+        if ($level >= Level::Error->value) {
+            $record->extra['start_tag'] = '<error>';
+            $record->extra['end_tag'] = '</error>';
+        } elseif ($level >= Level::Notice->value) {
+            $record->extra['start_tag'] = '<comment>';
+            $record->extra['end_tag'] = '</comment>';
+        } elseif ($level >= Level::Info->value) {
+            $record->extra['start_tag'] = '<info>';
+            $record->extra['end_tag'] = '</info>';
         } else {
-            $record['start_tag'] = '';
-            $record['end_tag'] = '';
+            $record->extra['start_tag'] = '';
+            $record->extra['end_tag'] = '';
         }
 
         return parent::format($record);

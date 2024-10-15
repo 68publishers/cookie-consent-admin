@@ -11,11 +11,11 @@ use App\Domain\CookieSuggestion\CookieSuggestionRepositoryInterface;
 use Exception;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class CreateCookieSuggestionCommandHandler implements CommandHandlerInterface
+final readonly class CreateCookieSuggestionCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly CookieSuggestionRepositoryInterface $cookieSuggestionRepository,
-        private readonly CheckSuggestionNameAndDomainUniquenessInterface $checkSuggestionNameAndDomainUniqueness,
+        private CookieSuggestionRepositoryInterface $cookieSuggestionRepository,
+        private CheckSuggestionNameAndDomainUniquenessInterface $checkSuggestionNameAndDomainUniqueness,
     ) {}
 
     /**

@@ -9,9 +9,9 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\ComparableValueOb
 
 final class EnvironmentSettings implements ComparableValueObjectInterface
 {
-    public const DEFAULT_ENVIRONMENT_CODE = 'default';
-    private const DEFAULT_ENVIRONMENT_NAME = 'Default';
-    private const DEFAULT_ENVIRONMENT_COLOR = '#ffffff';
+    public const string DEFAULT_ENVIRONMENT_CODE = 'default';
+    private const string DEFAULT_ENVIRONMENT_NAME = 'Default';
+    private const string DEFAULT_ENVIRONMENT_COLOR = '#ffffff';
 
     private function __construct(
         public readonly Environment $defaultEnvironment,

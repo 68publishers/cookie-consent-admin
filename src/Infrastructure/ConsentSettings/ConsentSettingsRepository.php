@@ -11,10 +11,10 @@ use App\Domain\ConsentSettings\ValueObject\ConsentSettingsId;
 use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AggregateId;
 use SixtyEightPublishers\ArchitectureBundle\Infrastructure\Common\Repository\AggregateRootRepositoryInterface;
 
-final class ConsentSettingsRepository implements ConsentSettingsRepositoryInterface
+final readonly class ConsentSettingsRepository implements ConsentSettingsRepositoryInterface
 {
     public function __construct(
-        private readonly AggregateRootRepositoryInterface $aggregateRootRepository,
+        private AggregateRootRepositoryInterface $aggregateRootRepository,
     ) {}
 
     public function save(ConsentSettings $consentSettings): void

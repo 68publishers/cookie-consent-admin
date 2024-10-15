@@ -38,10 +38,10 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\Event\AggregateDeleted;
 use SixtyEightPublishers\ArchitectureBundle\Event\EventHandlerInterface;
 use Symfony\Component\Messenger\Handler\MessageSubscriberInterface;
 
-final class ClearEtagStoreWhenAnythingRelatedToCookiesChanged implements EventHandlerInterface, MessageSubscriberInterface
+final readonly class ClearEtagStoreWhenAnythingRelatedToCookiesChanged implements EventHandlerInterface, MessageSubscriberInterface
 {
     public function __construct(
-        private readonly EtagStoreInterface $etagStore,
+        private EtagStoreInterface $etagStore,
     ) {}
 
     public static function getHandledMessages(): iterable

@@ -21,7 +21,7 @@ use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
 abstract class SelectedProjectPresenter extends AdminPresenter
 {
-    private const MENU_NAME_SIDEBAR_PROJECT = 'sidebar_project';
+    private const string MENU_NAME_SIDEBAR_PROJECT = 'sidebar_project';
 
     /** @persistent */
     public string $project = '';

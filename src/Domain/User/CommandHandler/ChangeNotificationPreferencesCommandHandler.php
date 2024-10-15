@@ -11,10 +11,10 @@ use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 use SixtyEightPublishers\UserBundle\Domain\Repository\UserRepositoryInterface;
 use SixtyEightPublishers\UserBundle\Domain\ValueObject\UserId;
 
-final class ChangeNotificationPreferencesCommandHandler implements CommandHandlerInterface
+final readonly class ChangeNotificationPreferencesCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly UserRepositoryInterface $userRepository,
+        private UserRepositoryInterface $userRepository,
     ) {}
 
     public function __invoke(ChangeNotificationPreferencesCommand $command): void

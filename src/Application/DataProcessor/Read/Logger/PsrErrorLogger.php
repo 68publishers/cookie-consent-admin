@@ -7,10 +7,10 @@ namespace App\Application\DataProcessor\Read\Logger;
 use App\Application\DataProcessor\Read\Event\ReaderErrorEvent;
 use Psr\Log\LoggerInterface;
 
-final class PsrErrorLogger
+final readonly class PsrErrorLogger
 {
     public function __construct(
-        private readonly LoggerInterface $logger,
+        private LoggerInterface $logger,
     ) {}
 
     public function __invoke(ReaderErrorEvent $event): void

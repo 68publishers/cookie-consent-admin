@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\ReadModel\Cookie;
 
-final class CookieProjectItem
+final readonly class CookieProjectItem
 {
     public function __construct(
-        public readonly string $name,
-        public readonly string $color,
+        public string $name,
+        public string $color,
     ) {}
 }

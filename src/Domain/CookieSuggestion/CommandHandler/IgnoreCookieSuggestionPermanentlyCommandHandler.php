@@ -9,10 +9,10 @@ use App\Domain\CookieSuggestion\CookieSuggestionRepositoryInterface;
 use App\Domain\CookieSuggestion\ValueObject\CookieSuggestionId;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class IgnoreCookieSuggestionPermanentlyCommandHandler implements CommandHandlerInterface
+final readonly class IgnoreCookieSuggestionPermanentlyCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly CookieSuggestionRepositoryInterface $cookieSuggestionRepository,
+        private CookieSuggestionRepositoryInterface $cookieSuggestionRepository,
     ) {}
 
     public function __invoke(IgnoreCookieSuggestionPermanentlyCommand $command): void

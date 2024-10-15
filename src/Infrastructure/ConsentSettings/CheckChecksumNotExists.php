@@ -12,10 +12,10 @@ use App\ReadModel\ConsentSettings\ConsentSettingsView;
 use App\ReadModel\ConsentSettings\GetConsentSettingsByProjectIdAndChecksumQuery;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class CheckChecksumNotExists implements CheckChecksumNotExistsInterface
+final readonly class CheckChecksumNotExists implements CheckChecksumNotExistsInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(ProjectId $projectId, Checksum $checksum): void

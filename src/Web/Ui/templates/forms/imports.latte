@@ -166,7 +166,7 @@
 {/define}
 
 {define #input-type-textarea}
-    {var $codemirror = $control->getOption('codemirror', NULL)}
+    {var $codemirror = $control->getOption('codemirror')}
 
     <textarea n:name="$control" n:class="
         $control->getControlPrototype()->class,

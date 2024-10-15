@@ -6,7 +6,7 @@ namespace App\Application\DataProcessor\Write\Destination;
 
 class FileDestination implements DestinationInterface
 {
-    public const OPTION_CHMOD = 'chmod';
+    public const string OPTION_CHMOD = 'chmod';
 
     private string $filename;
 

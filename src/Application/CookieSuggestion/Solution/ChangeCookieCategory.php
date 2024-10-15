@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Application\CookieSuggestion\Solution;
 
-final class ChangeCookieCategory implements SolutionInterface
+final readonly class ChangeCookieCategory implements SolutionInterface
 {
     public function __construct(
-        private readonly string $existingCookieId,
-        private readonly string $categoryCode,
-        private readonly string $providerName,
+        private string $existingCookieId,
+        private string $categoryCode,
+        private string $providerName,
     ) {}
 
     public function getType(): string

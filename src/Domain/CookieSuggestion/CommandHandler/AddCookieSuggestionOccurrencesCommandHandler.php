@@ -10,10 +10,10 @@ use App\Domain\CookieSuggestion\ValueObject\CookieSuggestionId;
 use Exception;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class AddCookieSuggestionOccurrencesCommandHandler implements CommandHandlerInterface
+final readonly class AddCookieSuggestionOccurrencesCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly CookieSuggestionRepositoryInterface $cookieSuggestionRepository,
+        private CookieSuggestionRepositoryInterface $cookieSuggestionRepository,
     ) {}
 
     /**

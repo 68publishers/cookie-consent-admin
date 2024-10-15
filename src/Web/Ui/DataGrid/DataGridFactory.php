@@ -8,10 +8,10 @@ use App\ReadModel\DataGridQueryInterface;
 use App\Web\Ui\DataGrid\DataSource\ReadModelDataSource;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class DataGridFactory implements DataGridFactoryInterface
+final readonly class DataGridFactory implements DataGridFactoryInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function create(?DataGridQueryInterface $query = null): DataGrid

@@ -8,11 +8,11 @@ use App\Application\DataProcessor\Read\DataReaderFactoryInterface;
 use App\Application\DataProcessor\Read\Resource\ResourceInterface;
 use App\Application\DataProcessor\Write\DataWriterFactoryInterface;
 
-final class DataProcessFactory
+final readonly class DataProcessFactory
 {
     public function __construct(
-        private readonly DataReaderFactoryInterface $dataReaderFactory,
-        private readonly DataWriterFactoryInterface $dataWriterFactory,
+        private DataReaderFactoryInterface $dataReaderFactory,
+        private DataWriterFactoryInterface $dataWriterFactory,
     ) {}
 
     public function fromResource(string $format, ResourceInterface $resource): WriteProcess

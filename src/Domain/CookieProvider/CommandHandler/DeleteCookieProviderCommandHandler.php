@@ -9,10 +9,10 @@ use App\Domain\CookieProvider\CookieProviderRepositoryInterface;
 use App\Domain\CookieProvider\ValueObject\CookieProviderId;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class DeleteCookieProviderCommandHandler implements CommandHandlerInterface
+final readonly class DeleteCookieProviderCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly CookieProviderRepositoryInterface $cookieProviderRepository,
+        private CookieProviderRepositoryInterface $cookieProviderRepository,
     ) {}
 
     public function __invoke(DeleteCookieProviderCommand $command): void

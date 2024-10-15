@@ -25,10 +25,10 @@ final class ExportFormControl extends Control
 {
     use FormFactoryOptionsTrait;
 
-    private const FORMAT_CSV = 'csv';
-    private const FORMAT_JSON = 'json';
+    private const string FORMAT_CSV = 'csv';
+    private const string FORMAT_JSON = 'json';
 
-    private const FORMATS = [
+    private const array FORMATS = [
         self::FORMAT_CSV,
         self::FORMAT_JSON,
     ];
@@ -62,7 +62,7 @@ final class ExportFormControl extends Control
             ->setTranslator(null)
             ->setRequired('format.required')
             ->setDefaultValue(self::FORMAT_CSV)
-            ->addCondition($form::EQUAL, self::FORMAT_CSV)
+            ->addCondition($form::Equal, self::FORMAT_CSV)
                 ->toggle('#' . $this->getUniqueId() . '-separator-container');
 
         $form->addSelect('separator', 'separator.field')
@@ -73,7 +73,7 @@ final class ExportFormControl extends Control
             ->setTranslator(null)
             ->setDefaultValue('comma')
             ->setOption('id', $this->getUniqueId() . '-separator-container')
-            ->addConditionOn($form['format'], $form::EQUAL, self::FORMAT_CSV)
+            ->addConditionOn($form['format'], $form::Equal, self::FORMAT_CSV)
                 ->setRequired('separator.required');
 
         $form->addProtection('//layout.form_protection');

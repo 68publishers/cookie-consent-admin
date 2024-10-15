@@ -6,12 +6,12 @@ namespace App\ReadModel\User;
 
 use DateTimeImmutable;
 
-final class ExternalAuthView
+final readonly class ExternalAuthView
 {
     public function __construct(
-        public readonly string $userId,
-        public readonly string $providerCode,
-        public readonly ?DateTimeImmutable $createdAt,
-        public readonly string $resourceOwnerId,
+        public string $userId,
+        public string $providerCode,
+        public ?DateTimeImmutable $createdAt,
+        public string $resourceOwnerId,
     ) {}
 }

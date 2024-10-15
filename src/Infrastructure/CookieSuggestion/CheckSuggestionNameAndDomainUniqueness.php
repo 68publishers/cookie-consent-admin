@@ -14,10 +14,10 @@ use App\ReadModel\CookieSuggestion\CookieSuggestion;
 use App\ReadModel\CookieSuggestion\GetCookieSuggestionByProjectIdAndNameAndDomainQuery;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class CheckSuggestionNameAndDomainUniqueness implements CheckSuggestionNameAndDomainUniquenessInterface
+final readonly class CheckSuggestionNameAndDomainUniqueness implements CheckSuggestionNameAndDomainUniquenessInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(CookieSuggestionId $cookieSuggestionId, ProjectId $projectId, Name $name, Domain $domain): void

@@ -12,10 +12,10 @@ use App\ReadModel\Project\GetProjectByCodeQuery;
 use App\ReadModel\Project\ProjectView;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class CheckCodeUniqueness implements CheckCodeUniquenessInterface
+final readonly class CheckCodeUniqueness implements CheckCodeUniquenessInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(ProjectId $projectId, Code $code): void

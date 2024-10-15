@@ -11,10 +11,10 @@ use App\Domain\CookieProvider\ValueObject\CookieProviderId;
 use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AggregateId;
 use SixtyEightPublishers\ArchitectureBundle\Infrastructure\Common\Repository\AggregateRootRepositoryInterface;
 
-final class CookieProviderRepository implements CookieProviderRepositoryInterface
+final readonly class CookieProviderRepository implements CookieProviderRepositoryInterface
 {
     public function __construct(
-        private readonly AggregateRootRepositoryInterface $aggregateRootRepository,
+        private AggregateRootRepositoryInterface $aggregateRootRepository,
     ) {}
 
     public function save(CookieProvider $cookieProvider): void

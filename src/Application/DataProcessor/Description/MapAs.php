@@ -7,10 +7,10 @@ namespace App\Application\DataProcessor\Description;
 use App\Application\DataProcessor\Context\ContextInterface;
 use Nette\Schema\Elements\Structure;
 
-final class MapAs implements StructureDescriptorPropertyInterface
+final readonly class MapAs implements StructureDescriptorPropertyInterface
 {
     public function __construct(
-        private readonly string $classname,
+        private string $classname,
     ) {}
 
     public function applyToStructure(Structure $structure, ContextInterface $context): Structure

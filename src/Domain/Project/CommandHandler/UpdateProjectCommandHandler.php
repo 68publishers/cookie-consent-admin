@@ -10,11 +10,11 @@ use App\Domain\Project\ProjectRepositoryInterface;
 use App\Domain\Project\ValueObject\ProjectId;
 use SixtyEightPublishers\ArchitectureBundle\Command\CommandHandlerInterface;
 
-final class UpdateProjectCommandHandler implements CommandHandlerInterface
+final readonly class UpdateProjectCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly ProjectRepositoryInterface $projectRepository,
-        private readonly CheckCodeUniquenessInterface $checkCodeUniqueness,
+        private ProjectRepositoryInterface $projectRepository,
+        private CheckCodeUniquenessInterface $checkCodeUniqueness,
     ) {}
 
     public function __invoke(UpdateProjectCommand $command): void

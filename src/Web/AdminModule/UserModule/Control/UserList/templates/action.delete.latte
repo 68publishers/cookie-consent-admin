@@ -1,7 +1,7 @@
 {varType App\ReadModel\User\UserView $item}
 
 <a
-    n:if="$user->isAllowed(App\Application\Acl\UserResource::class, App\Application\Acl\UserResource::DELETE) && !$item->id->equals($user->identity->getId())"
+    n:if="$user->isAllowed(App\Application\Acl\UserResource::class, App\Application\Acl\UserResource::DELETE) && !$item->id->equals($user->identity->id())"
     href="{$linkFactory('openModal!', ['deleteConfirm-' . $item->id->id()->getHex()->toString()])}"
     x-data
     x-tooltip.placement.bottom.raw="{_tooltip.delete_action}"

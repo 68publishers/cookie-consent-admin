@@ -8,9 +8,9 @@ use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\PaginatedQueryInterf
 
 interface DataGridQueryInterface extends PaginatedQueryInterface
 {
-    public const MODE_DATA = 'data';
-    public const MODE_ONE = 'one';
-    public const MODE_COUNT = 'count';
+    public const string MODE_DATA = 'data';
+    public const string MODE_ONE = 'one';
+    public const string MODE_COUNT = 'count';
 
     public function filters(): array;
 

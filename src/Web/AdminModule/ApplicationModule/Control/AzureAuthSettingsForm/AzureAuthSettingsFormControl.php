@@ -38,7 +38,7 @@ final class AzureAuthSettingsFormControl extends Control
 
         $enabledField = $form->addCheckbox('enabled', 'enabled.field');
 
-        $enabledField->addCondition($form::EQUAL, true)
+        $enabledField->addCondition($form::Equal, true)
             ->toggle('#' . $this->getUniqueId() . '-client_id-container')
             ->toggle('#' . $this->getUniqueId() . '-client_secret-container')
             ->toggle('#' . $this->getUniqueId() . '-tenant_id-container')
@@ -46,12 +46,12 @@ final class AzureAuthSettingsFormControl extends Control
 
         $form->addText('client_id', 'client_id.field')
             ->setOption('id', $this->getUniqueId() . '-client_id-container')
-            ->addConditionOn($enabledField, $form::EQUAL, true)
+            ->addConditionOn($enabledField, $form::Equal, true)
                 ->setRequired('client_id.required');
 
         $form->addText('client_secret', 'client_secret.field')
             ->setOption('id', $this->getUniqueId() . '-client_secret-container')
-            ->addConditionOn($enabledField, $form::EQUAL, true)
+            ->addConditionOn($enabledField, $form::Equal, true)
                 ->setRequired('client_secret.required');
 
         $form->addText('tenant_id', 'tenant_id.field')

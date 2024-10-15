@@ -12,10 +12,10 @@ use Doctrine\DBAL\Connection;
 use Exception;
 use SixtyEightPublishers\ArchitectureBundle\ReadModel\Query\QueryHandlerInterface;
 
-final class FindExternalAuthenticationsQueryHandler implements QueryHandlerInterface
+final readonly class FindExternalAuthenticationsQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
-        private readonly Connection $connection,
+        private Connection $connection,
     ) {}
 
     /**

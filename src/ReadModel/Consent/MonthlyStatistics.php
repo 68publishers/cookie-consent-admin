@@ -7,21 +7,21 @@ namespace App\ReadModel\Consent;
 /**
  * @phpstan-type MonthlyStatisticsArray = array{ 1: int, 2: int, 3: int, 4: int, 5: int, 6: int, 7: int, 8: int, 9: int, 10: int, 11: int, 12: int }
  */
-final class MonthlyStatistics
+final readonly class MonthlyStatistics
 {
     public function __construct(
-        public readonly int $m1,
-        public readonly int $m2,
-        public readonly int $m3,
-        public readonly int $m4,
-        public readonly int $m5,
-        public readonly int $m6,
-        public readonly int $m7,
-        public readonly int $m8,
-        public readonly int $m9,
-        public readonly int $m10,
-        public readonly int $m11,
-        public readonly int $m12,
+        public int $m1,
+        public int $m2,
+        public int $m3,
+        public int $m4,
+        public int $m5,
+        public int $m6,
+        public int $m7,
+        public int $m8,
+        public int $m9,
+        public int $m10,
+        public int $m11,
+        public int $m12,
     ) {}
 
     /**

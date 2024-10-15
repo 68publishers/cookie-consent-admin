@@ -9,10 +9,10 @@ use App\Application\DataProcessor\Read\Resource\QueryResource;
 use App\Application\DataProcessor\Read\Resource\ResourceInterface;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class QueryReaderFactory implements ReaderFactoryInterface
+final readonly class QueryReaderFactory implements ReaderFactoryInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function accepts(string $format, ResourceInterface $resource): bool

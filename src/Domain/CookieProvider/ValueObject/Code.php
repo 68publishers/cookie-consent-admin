@@ -9,7 +9,7 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\AbstractStringVal
 
 final class Code extends AbstractStringValueObject
 {
-    public const MAX_LENGTH = 70;
+    public const int MAX_LENGTH = 70;
 
     public static function withValidation(string $code): self
     {

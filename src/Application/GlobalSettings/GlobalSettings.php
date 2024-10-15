@@ -9,18 +9,18 @@ use App\Domain\GlobalSettings\ValueObject\AzureAuthSettings;
 use App\Domain\GlobalSettings\ValueObject\CrawlerSettings;
 use App\Domain\GlobalSettings\ValueObject\EnvironmentSettings;
 
-final class GlobalSettings implements GlobalSettingsInterface
+final readonly class GlobalSettings implements GlobalSettingsInterface
 {
     /**
      * @param array<Locale> $locales
      */
     public function __construct(
-        private readonly array $locales,
-        private readonly Locale $defaultLocale,
-        private readonly ApiCache $apiCache,
-        private readonly CrawlerSettings $crawlerSettings,
-        private readonly EnvironmentSettings $environmentSettings,
-        private readonly AzureAuthSettings $azureAuthSettings,
+        private array $locales,
+        private Locale $defaultLocale,
+        private ApiCache $apiCache,
+        private CrawlerSettings $crawlerSettings,
+        private EnvironmentSettings $environmentSettings,
+        private AzureAuthSettings $azureAuthSettings,
     ) {}
 
     public static function default(): self

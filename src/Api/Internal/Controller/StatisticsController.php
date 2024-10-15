@@ -25,7 +25,7 @@ use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
  */
 final class StatisticsController extends AbstractInternalController
 {
-    public const ENDPOINT_PROJECTS = '/api/internal/statistics/projects';
+    public const string ENDPOINT_PROJECTS = '/api/internal/statistics/projects';
 
     public function __construct(
         private readonly QueryBusInterface $queryBus,

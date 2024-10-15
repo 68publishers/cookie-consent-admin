@@ -12,10 +12,10 @@ use App\ReadModel\Consent\ConsentView;
 use App\ReadModel\Consent\GetConsentByProjectIdAndUserIdentifierQuery;
 use SixtyEightPublishers\ArchitectureBundle\Bus\QueryBusInterface;
 
-final class CheckUserIdentifierNotExists implements CheckUserIdentifierNotExistsInterface
+final readonly class CheckUserIdentifierNotExists implements CheckUserIdentifierNotExistsInterface
 {
     public function __construct(
-        private readonly QueryBusInterface $queryBus,
+        private QueryBusInterface $queryBus,
     ) {}
 
     public function __invoke(UserIdentifier $userIdentifier, ProjectId $projectId): void

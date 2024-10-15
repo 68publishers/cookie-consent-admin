@@ -10,11 +10,11 @@ use Nette\Application\Routers\RouteList;
 use Nette\Routing\Route;
 use SixtyEightPublishers\UserBundle\Application\Csrf\CsrfTokenFactoryInterface;
 
-final class RouterFactory
+final readonly class RouterFactory
 {
     public function __construct(
-        private readonly Profiles $profiles,
-        private readonly CsrfTokenFactoryInterface $csrfTokenFactory,
+        private Profiles $profiles,
+        private CsrfTokenFactoryInterface $csrfTokenFactory,
     ) {}
 
     public function create(): RouteList
@@ -24,7 +24,7 @@ final class RouterFactory
         $router->withModule('Front')
             ->addRoute('[<locale [a-z]{2}>/]<presenter>[/<id>]', [
                 null => [
-                    Route::FILTER_IN => function (array $params) {
+                    Route::FilterIn => function (array $params) {
                         if (!in_array($params['presenter'], [
                             'SignIn',
                             'ForgotPassword',

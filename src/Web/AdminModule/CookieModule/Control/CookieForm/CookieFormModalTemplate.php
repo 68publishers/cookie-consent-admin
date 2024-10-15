@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Web\AdminModule\CookieModule\Control\CookieForm;
 
 use App\ReadModel\Cookie\CookieView;
-use Nette\Bridges\ApplicationLatte\Template;
+use App\Web\Ui\Modal\AbstractModalTemplate;
 
-final class CookieFormModalTemplate extends Template
+final class CookieFormModalTemplate extends AbstractModalTemplate
 {
     public ?CookieView $default = null;
 }

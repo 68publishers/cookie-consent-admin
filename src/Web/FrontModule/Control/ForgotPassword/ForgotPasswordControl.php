@@ -38,7 +38,7 @@ final class ForgotPasswordControl extends Control
 
         $form->addText('email_address')
             ->setRequired('email_address.required')
-            ->addRule($form::EMAIL, 'email_address.rule')
+            ->addRule($form::Email, 'email_address.rule')
             ->setHtmlAttribute('placeholder', 'email_address.field')
             ->setHtmlAttribute('autocomplete', 'username');
 

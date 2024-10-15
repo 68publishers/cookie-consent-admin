@@ -17,7 +17,7 @@ final class SignOutPresenter extends AdminPresenter
      * @throws IdentityException
      * @throws AbortException
      */
-    protected function handleUserLoggedOut(): never
+    protected function userLoggedOutHandler(): never
     {
         $userView = $this->getIdentity()->data();
         assert($userView instanceof UserView);

@@ -9,7 +9,7 @@ use App\Application\CookieSuggestion\Suggestion\CookieOccurrence;
 
 final class CookieIsInCategoryThatIsNotAcceptedByScenario implements ProblemInterface
 {
-    public const TYPE = 'cookie_is_in_category_that_is_not_accepted';
+    public const string TYPE = 'cookie_is_in_category_that_is_not_accepted';
 
     /**
      * @param array<int, string> $cookieCategories

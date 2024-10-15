@@ -11,7 +11,7 @@ use SixtyEightPublishers\ArchitectureBundle\Domain\ValueObject\ValueObjectSetInt
 
 final class Environments extends AbstractValueObjectSet
 {
-    public const ITEM_CLASSNAME = Environment::class;
+    public const string ITEM_CLASSNAME = Environment::class;
 
     /**
      * @throws UnableToCreateEnvironmentsException

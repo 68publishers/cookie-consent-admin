@@ -6,7 +6,7 @@ namespace App\Application\Acl;
 
 final class CrawlerScenariosResource extends AbstractResource
 {
-    public const READ = 'read';
-    public const RUN = 'run';
-    public const ABORT = 'abort';
+    public const string READ = 'read';
+    public const string RUN = 'run';
+    public const string ABORT = 'abort';
 }

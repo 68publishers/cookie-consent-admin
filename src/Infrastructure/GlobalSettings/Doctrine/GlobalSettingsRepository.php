@@ -10,11 +10,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\NonUniqueResultException;
 use SixtyEightPublishers\ArchitectureBundle\Infrastructure\Common\Repository\AggregateRootRepositoryInterface;
 
-final class GlobalSettingsRepository implements GlobalSettingsRepositoryInterface
+final readonly class GlobalSettingsRepository implements GlobalSettingsRepositoryInterface
 {
     public function __construct(
-        private readonly AggregateRootRepositoryInterface $aggregateRootRepository,
-        private readonly EntityManagerInterface $em,
+        private AggregateRootRepositoryInterface $aggregateRootRepository,
+        private EntityManagerInterface $em,
     ) {}
 
     public function save(GlobalSettings $globalSettings): void
